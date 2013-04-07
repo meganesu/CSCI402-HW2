@@ -74,6 +74,36 @@ free_stack(char *stack)
 kthread_t *
 kthread_create(struct proc *p, kthread_func_t func, long arg1, void *arg2)
 {
+        /* Allocate thread (slab allocator) */
+        kthread_t *new_thr = slab_obj_alloc(kthread_allocator);
+
+        /* Initialize data structures */
+        new_thr->kt_proc = p;
+        new_thr->kt_cancelled = 0; /* Initialize kt_cancelled to 0 (not cancelled) */
+
+        /*   void *kt_retval: Don't use until later */
+        /*   int kt_errno: Don't use until later */
+        /*   ktqueue_t *kt_wchan: Queue you're waiting on. Don't use until later */
+        new_thr->kt_wchan = NULL;
+
+        /*   kt_state */
+        new_thr->kt_state = KT_RUN;
+
+        /*   char *kt_kstack: alloc_stack() in this file */
+        new_thr->kt_kstack = alloc_stack();
+
+        /*   context_t kt_ctx: context_setup() in kernel/proc/context.c */
+        context_setup(&new_thr->kt_ctx, func, arg1, arg2, new_thr->kt_kstack, DEFAULT_STACK_SIZE, p->p_pagedir);
+
+        /* Make links. Process's wait queue, process's thread list. */
+        list_link_init(&new_thr->kt_qlink);
+        list_link_init(&new_thr->kt_plink);
+        list_insert_tail(&p->p_threads, &new_thr->kt_plink);
+
+        /* sched_make_runnable(), in kernel/proc/sched.c
+             first thread is context_make_active(), in kernel/proc/context.c
+        */
+
         NOT_YET_IMPLEMENTED("PROCS: kthread_create");
         return NULL;
 }
@@ -81,6 +111,7 @@ kthread_create(struct proc *p, kthread_func_t func, long arg1, void *arg2)
 void
 kthread_destroy(kthread_t *t)
 {
+        /* Free child thread structure */
         KASSERT(t && t->kt_kstack);
         free_stack(t->kt_kstack);
         if (list_link_is_linked(&t->kt_plink))
@@ -103,6 +134,32 @@ kthread_destroy(kthread_t *t)
 void
 kthread_cancel(kthread_t *kthr, void *retval)
 {
+        /* Set cancelled flag */
+        kthr->kt_cancelled = 1;
+
+        /* if kthr == curthr, do kthread_exit */
+        if (kthr == curthr) {
+           kthread_exit(retval);
+           return;
+        }
+
+        /* if you get here, thread is sleeping */
+        if (kthr->kt_state == KT_SLEEP_CANCELLABLE) {
+            /* Wake from queue it's sleeping on, add to run queue */
+            sched_cancel(kthr);
+        }
+
+        /*  thread queued cancellably is dequeued
+
+           Cancelled thread voluntarily terminates itself
+
+           Thread code hears about cancellation after
+        */
+
+        /* Set retval and state in thread proc */
+        kthr->kt_retval = retval;
+        kthr->kt_state = KT_EXITED;
+
         NOT_YET_IMPLEMENTED("PROCS: kthread_cancel");
 }
 
@@ -119,7 +176,16 @@ kthread_cancel(kthread_t *kthr, void *retval)
 void
 kthread_exit(void *retval)
 {
-        NOT_YET_IMPLEMENTED("PROCS: kthread_exit");
+        /* Set thread retval */
+        curthr->kt_retval = retval;
+
+        /* Set thread state to KT_EXITED */
+        curthr->kt_state = KT_EXITED;
+
+        /* Alert curproc that thread is exiting by calling proc_thread_exited() */
+        proc_thread_exited(retval);
+
+        /* NOT_YET_IMPLEMENTED("PROCS: kthread_exit"); */
 }
 
 /*

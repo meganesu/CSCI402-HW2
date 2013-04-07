@@ -100,7 +100,22 @@ sched_queue_empty(ktqueue_t *q)
 void
 sched_sleep_on(ktqueue_t *q)
 {
-        NOT_YET_IMPLEMENTED("PROCS: sched_sleep_on");
+        /* Update thread state */
+        curthr->kt_state = KT_SLEEP;
+
+        /* Take off run queue (kt_runq) */
+        ktqueue_remove(&kt_runq, curthr);
+
+        /* Enqueue to wait queue */
+        ktqueue_enqueue(q, curthr);
+
+        /* Set pointer to queue curthr is waiting on */
+        curthr->kt_wchan = q;
+
+        /* Context switch from old to new. context_switch() */
+        sched_switch();
+
+        /* NOT_YET_IMPLEMENTED("PROCS: sched_sleep_on"); */
 }
 
 
@@ -114,21 +129,57 @@ sched_sleep_on(ktqueue_t *q)
 int
 sched_cancellable_sleep_on(ktqueue_t *q)
 {
-        NOT_YET_IMPLEMENTED("PROCS: sched_cancellable_sleep_on");
+        /* Update thread state */
+        curthr->kt_state = KT_SLEEP_CANCELLABLE;
+
+        /* Do NOT enqueue if thread cancelled flag is set. Return different value. */
+        if (curthr->kt_cancelled) return -EINTR;
+        else {
+          /* Take curthr off run queue and add to wait queue */
+          ktqueue_remove(&kt_runq, curthr);
+          ktqueue_enqueue(q, curthr);
+        }
+
+        /* Set pointer to queue curthr is waiting on */
+        curthr->kt_wchan = q;
+
+        /* Context switch from old to new. context_switch() */
+        sched_switch();
+
+        /* NOT_YET_IMPLEMENTED("PROCS: sched_cancellable_sleep_on"); */
         return 0;
 }
 
 kthread_t *
 sched_wakeup_on(ktqueue_t *q)
 {
-        NOT_YET_IMPLEMENTED("PROCS: sched_wakeup_on");
-        return NULL;
+        if (sched_queue_empty(q)) return NULL;
+
+        /* If you get here, q was not empty, so there's someone to remove */
+        /* Dequeue one from given queue */
+        kthread_t *wake_thr = ktqueue_dequeue(q);
+
+        /* Make runnable */
+        sched_make_runnable(wake_thr);
+
+        /* Reset pointer to queue wake_thr is waiting on */
+        wake_thr->kt_wchan = NULL;
+
+        /* NOT_YET_IMPLEMENTED("PROCS: sched_wakeup_on"); */
+        return wake_thr;
 }
 
 void
 sched_broadcast_on(ktqueue_t *q)
 {
-        NOT_YET_IMPLEMENTED("PROCS: sched_broadcast_on");
+        /* Dequeue all from wait queue and make runnable */
+        while (!sched_queue_empty(q)) {
+          kthread_t *wake_thr = ktqueue_dequeue(q);
+          sched_make_runnable(wake_thr);
+          wake_thr->kt_wchan = NULL;
+        }
+
+        /* NOT_YET_IMPLEMENTED("PROCS: sched_broadcast_on"); */
 }
 
 /*
@@ -143,6 +194,15 @@ sched_broadcast_on(ktqueue_t *q)
 void
 sched_cancel(struct kthread *kthr)
 {
+        kthr->kt_cancelled = 1;
+
+        /* If cancellable sleep, wake from queue it's waiting on */
+        if (kthr->kt_state == KT_SLEEP_CANCELLABLE) {
+          ktqueue_dequeue(kthr->kt_wchan);
+          sched_make_runnable(kthr);
+          kthr->kt_wchan = NULL;
+        }
+
         NOT_YET_IMPLEMENTED("PROCS: sched_cancel");
 }
 
@@ -185,6 +245,20 @@ sched_cancel(struct kthread *kthr)
 void
 sched_switch(void)
 {
+        /* Somewhere in here: set interrupts to protect run queue
+            intr_setipl(IPL_LOW) or IPL_HIGH, in include/main/interrupt.h
+        */
+
+        /* Enqueue requesting thread on run queue if still runnable
+            (dead threads become unschedulable)
+        */
+
+        /* Pick a runnable thread */
+
+        /* context_switch() */
+
+        /* Manage curproc, curthr */
+
         NOT_YET_IMPLEMENTED("PROCS: sched_switch");
 }
 
@@ -204,5 +278,16 @@ sched_switch(void)
 void
 sched_make_runnable(kthread_t *thr)
 {
+        uint8_t oldIPL = intr_getipl(); /* Check what currently running IPL is */
+        intr_setipl(IPL_HIGH); /* Block all hardware interrupts */
+
+        /* Add thread to run queue */
+        ktqueue_enqueue(&kt_runq, thr);
+        /* Make thread runnable (just in case it wasn't already) */
+        thr->kt_state = KT_RUN;
+
+        intr_setipl(oldIPL); /* Reset IPL level */
+        /* 
         NOT_YET_IMPLEMENTED("PROCS: sched_make_runnable");
+        */
 }

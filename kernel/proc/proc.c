@@ -82,8 +82,55 @@ failed:
 proc_t *
 proc_create(char *name)
 {
-        NOT_YET_IMPLEMENTED("PROCS: proc_create");
-        return NULL;
+        /* Allocate proc structure (using slab allocator) */
+        proc_t *new_proc = slab_obj_alloc(proc_allocator); /* slab_obj_alloc(struct slab_allocator *allocator) */
+        /* Returns pointer (void *) to object allocated */
+
+        /* Initialize data structures */
+        /*   p_pid: Process ID number */
+        new_proc->p_pid = _proc_getid();
+        /* Set proc_initproc if init process (p_pid == 1) */
+        if (new_proc->p_pid == 1) proc_initproc = new_proc;
+
+        /*   p_comm[PROC_NAME_LEN]: Name of process */
+        strncpy((char *)&new_proc->p_comm, name, PROC_NAME_LEN);
+        /* strncpy doesn't necessarily add the null character to the end of the string */
+        new_proc->p_comm[PROC_NAME_LEN-1] = '\0';
+
+        /*   p_threads: List of threads for process */
+        list_init(&new_proc->p_threads);
+        /*   p_children: List for process's children processes */
+        list_init(&new_proc->p_children);
+
+        /*   *p_pproc: Pointer to parent process
+         *               since curproc called proc_create(), that's the parent
+         */
+        new_proc->p_pproc = curproc;
+
+        /*   p_status: Don't need to set until process exits */
+
+        /*   p_state: Should be PROC_RUNNING */
+        new_proc->p_state = PROC_RUNNING;
+
+        /*   p_wait: Wait queue for process */
+        sched_queue_init(&new_proc->p_wait);
+
+        /* Make links. Add to child list for curproc. Add to list of all processes. */
+        /*   p_list_link: Link for list of all processes */
+        list_link_init(&new_proc->p_list_link);
+        list_insert_tail(&_proc_list, &new_proc->p_list_link);
+        /*   p_child_link: Link for list of children of parent process */
+        list_link_init(&new_proc->p_child_link);
+        list_insert_tail(&curproc->p_children, &new_proc->p_child_link);
+
+        /* Set up page table. pt_create_pagedir(), in kernel/mm/pagetable.c */
+        /*   *p_pagedir */
+        new_proc->p_pagedir = pt_create_pagedir(); /* Returns pointer to pagedir_t created */
+
+        return new_proc;
+
+        /* NOT_YET_IMPLEMENTED("PROCS: proc_create");
+        return NULL; */
 }
 
 /**
@@ -113,6 +160,16 @@ proc_create(char *name)
 void
 proc_cleanup(int status)
 {
+        /* Set exit status */
+        curproc->p_status = status;
+        /* Reparent children processes to init process */
+        /*   Remove child proc from curproc's p_children */
+        /*   Change child proc's p_pproc parent pointer */
+        /*   Don't forget to add the child process's p_child_link to init proc's p_children */
+
+        /* Clean up as much as possible (can't throw away page table here...) */
+        /* Wake up any waiting parent process (of curproc) */
+        /* Context switch out of thread forever */
         NOT_YET_IMPLEMENTED("PROCS: proc_cleanup");
 }
 
@@ -139,6 +196,12 @@ proc_kill(proc_t *p, int status)
 void
 proc_kill_all()
 {
+        /* Cancel all threads in processes not children of idle process */
+
+        /* Walk global process list and spread bad news */
+
+        /* Call proc_kill() somewhere in this function */
+
         NOT_YET_IMPLEMENTED("PROCS: proc_kill_all");
 }
 
@@ -171,6 +234,14 @@ proc_list()
 void
 proc_thread_exited(void *retval)
 {
+        /* Make sure threads are all done */
+        /*   guaranteed, since kthread_exit sets thread state to KT_EXITED
+         *   and only one thread per process, so all have exited */
+        proc_cleanup();
+
+        /* Schedule new thread to run */
+        sched_switch();
+
         NOT_YET_IMPLEMENTED("PROCS: proc_thread_exited");
 }
 
@@ -192,6 +263,28 @@ proc_thread_exited(void *retval)
 pid_t
 do_waitpid(pid_t pid, int options, int *status)
 {
+
+/**
+ * This function implements the waitpid(2) system call.
+ *
+ * @param pid see waitpid man page, only -1 or positive numbers are supported
+ * @param options see waitpid man page, only 0 is supported
+ * @param status used to return the exit status of the child
+ *
+ * @return the pid of the child process which was cleaned up, or
+ * -ECHILD if there are no children of this process
+ */
+
+        /* Wait for child process to terminate (possibly) */
+
+        /* Call kthread_destroy */
+
+        /* Unlink child process */
+
+        /* Free child page table */
+
+        /* Free child proc structure (using proc slab allocator) */
+        /* slab_obj_free(proc_allocator, PROCESS_TO_DELETE); */
         NOT_YET_IMPLEMENTED("PROCS: do_waitpid");
         return 0;
 }
@@ -205,6 +298,14 @@ do_waitpid(pid_t pid, int options, int *status)
 void
 do_exit(int status)
 {
+        curthr->kt_state = KT_EXITED;
+        proc_cleanup(status);
+        sched_switch();
+        /* Cancel all threads */
+        /* Join with threads */
+        /* Set thread state */
+        /* Exit from current thread */
+
         NOT_YET_IMPLEMENTED("PROCS: do_exit");
 }
 
