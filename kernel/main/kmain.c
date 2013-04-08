@@ -148,11 +148,11 @@ bootstrap(int arg1, void *arg2)
         pt_template_init();
 
         /* Create idle process and idle thread */
-        proc_t *idle_proc = proc_create("idle");
-        kthread_t *idle_thr = kthread_create(idle_proc, (kthread_func_t) idleproc_run, NULL, NULL);
-
+        curproc = proc_create("idle");
+        curthr = kthread_create(curproc, (kthread_func_t) idleproc_run, NULL, NULL);
+        dbg_print("Created idle proc and thread\n");
         /* Make idle thread the active context */
-        context_make_active(&idle_thr->kt_ctx);
+        context_make_active(&curthr->kt_ctx);
 
         /* NOT_YET_IMPLEMENTED("PROCS: bootstrap"); */
 
@@ -177,6 +177,7 @@ idleproc_run(int arg1, void *arg2)
 {
         int status;
         pid_t child;
+        dbg_print("Made it to idleproc_run\n");
 
         /* create init proc */
         kthread_t *initthr = initproc_create();
@@ -246,6 +247,8 @@ initproc_create(void)
         /* Create init process and init thread */
         proc_t *init_proc = proc_create("init");
         kthread_t *init_thr = kthread_create(init_proc, (kthread_func_t) initproc_run, NULL, NULL);
+        /* ADD IDLE PROC TO INIT THREAD'S WAIT QUEUE. might happen in do_waitpid(), when idle calls it ***************/
+
         return init_thr;
 
         /*

@@ -86,46 +86,63 @@ proc_create(char *name)
         proc_t *new_proc = slab_obj_alloc(proc_allocator); /* slab_obj_alloc(struct slab_allocator *allocator) */
         /* Returns pointer (void *) to object allocated */
 
+        dbg_print("Allocated proc structure\n");
+
         /* Initialize data structures */
         /*   p_pid: Process ID number */
         new_proc->p_pid = _proc_getid();
+        dbg_print("Initialize pid, %d\n", new_proc->p_pid);
+
         /* Set proc_initproc if init process (p_pid == 1) */
-        if (new_proc->p_pid == 1) proc_initproc = new_proc;
+        if (new_proc->p_pid == 1) {proc_initproc = new_proc;
+          dbg_print("Set proc_initproc if pid == 1\n"); }
 
         /*   p_comm[PROC_NAME_LEN]: Name of process */
         strncpy((char *)&new_proc->p_comm, name, PROC_NAME_LEN);
         /* strncpy doesn't necessarily add the null character to the end of the string */
         new_proc->p_comm[PROC_NAME_LEN-1] = '\0';
+        dbg_print("Initialize name of proc\n");
 
         /*   p_threads: List of threads for process */
         list_init(&new_proc->p_threads);
+        dbg_print("Initialize list of proc threads\n");
         /*   p_children: List for process's children processes */
         list_init(&new_proc->p_children);
+        dbg_print("Initialized list of proc children\n");
 
         /*   *p_pproc: Pointer to parent process
          *               since curproc called proc_create(), that's the parent
          */
         new_proc->p_pproc = curproc;
+        dbg_print("Initialized parent proc pointer\n");
 
         /*   p_status: Don't need to set until process exits */
 
         /*   p_state: Should be PROC_RUNNING */
         new_proc->p_state = PROC_RUNNING;
+        dbg_print("Set proc state\n");
 
         /*   p_wait: Wait queue for process */
         sched_queue_init(&new_proc->p_wait);
+        dbg_print("Initialized wait queue for proc\n");
 
         /* Make links. Add to child list for curproc. Add to list of all processes. */
         /*   p_list_link: Link for list of all processes */
         list_link_init(&new_proc->p_list_link);
         list_insert_tail(&_proc_list, &new_proc->p_list_link);
+        dbg_print("Initialized and set list link for proc list\n");
         /*   p_child_link: Link for list of children of parent process */
-        list_link_init(&new_proc->p_child_link);
-        list_insert_tail(&curproc->p_children, &new_proc->p_child_link);
+        if (new_proc->p_pid > 0) { /* If you're the idle process, you don't have a parent */
+          list_link_init(&new_proc->p_child_link);
+          dbg_print("Initialized list link for parent proc's child list\n");
+          list_insert_tail(&curproc->p_children, &new_proc->p_child_link);
+          dbg_print("Set list link for parent proc's child list\n");
+        }
 
         /* Set up page table. pt_create_pagedir(), in kernel/mm/pagetable.c */
         /*   *p_pagedir */
         new_proc->p_pagedir = pt_create_pagedir(); /* Returns pointer to pagedir_t created */
+        dbg_print("Allocated page table\n");
 
         return new_proc;
 
@@ -237,7 +254,7 @@ proc_thread_exited(void *retval)
         /* Make sure threads are all done */
         /*   guaranteed, since kthread_exit sets thread state to KT_EXITED
          *   and only one thread per process, so all have exited */
-        proc_cleanup();
+        /*proc_cleanup();*/
 
         /* Schedule new thread to run */
         sched_switch();
@@ -274,7 +291,28 @@ do_waitpid(pid_t pid, int options, int *status)
  * @return the pid of the child process which was cleaned up, or
  * -ECHILD if there are no children of this process
  */
+        /* If curproc has no children, return -ECHILD */
+        if (list_empty(&curproc->p_children)) return -ECHILD;
 
+        /* If pid is -1, go through children and look for one that's dead, return exit status */
+        if (pid == -1) {
+          proc_t *p;
+          list_iterate_begin(&curproc->p_children, p, proc_t, p_child_link){
+            /* If child process is dead, set status to child's exit status, return child pid */
+            if (p->p_state == PROC_DEAD) {
+              status = p->p_status;
+              return p->p_pid;
+            }
+          } list_iterate_end();
+          /* If you get here, all your children are running, so wait on curproc wait queue until someone exits */
+          sched_sleep_on(&curproc->p_wait);
+        }
+
+        /* If pid greater than 0, given pid is child of current process, wait on curproc wait queue for child2 to exit */
+        /* If pid not a child of curproc, return -ECHILD */
+        else if (pid > 0 ) {
+
+        }
         /* Wait for child process to terminate (possibly) */
 
         /* Call kthread_destroy */

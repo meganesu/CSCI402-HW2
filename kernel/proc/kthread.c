@@ -92,20 +92,20 @@ kthread_create(struct proc *p, kthread_func_t func, long arg1, void *arg2)
         /*   char *kt_kstack: alloc_stack() in this file */
         new_thr->kt_kstack = alloc_stack();
 
-        /*   context_t kt_ctx: context_setup() in kernel/proc/context.c */
-        context_setup(&new_thr->kt_ctx, func, arg1, arg2, new_thr->kt_kstack, DEFAULT_STACK_SIZE, p->p_pagedir);
-
         /* Make links. Process's wait queue, process's thread list. */
         list_link_init(&new_thr->kt_qlink);
         list_link_init(&new_thr->kt_plink);
         list_insert_tail(&p->p_threads, &new_thr->kt_plink);
 
+        /*   context_t kt_ctx: context_setup() in kernel/proc/context.c */
+        context_setup(&new_thr->kt_ctx, func, arg1, arg2, new_thr->kt_kstack, DEFAULT_STACK_SIZE, p->p_pagedir);
+
         /* sched_make_runnable(), in kernel/proc/sched.c
              first thread is context_make_active(), in kernel/proc/context.c
         */
 
-        NOT_YET_IMPLEMENTED("PROCS: kthread_create");
-        return NULL;
+        /* NOT_YET_IMPLEMENTED("PROCS: kthread_create"); */
+        return new_thr;
 }
 
 void

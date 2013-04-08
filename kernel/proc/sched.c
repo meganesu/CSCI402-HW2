@@ -103,8 +103,14 @@ sched_sleep_on(ktqueue_t *q)
         /* Update thread state */
         curthr->kt_state = KT_SLEEP;
 
+        /* DON'T NEED TO TAKE OFF RUN QUEUE BECAUSE IT'S ALREADY RUNNING */
+        /* Need to set interrupt levels to protect run queue */
+        /*uint8_t oldIPL = intr_getipl();*/ /* Check what currently running IPL is */
+        /*intr_setipl(IPL_HIGH);*/ /* Block all hardware interrupts */
         /* Take off run queue (kt_runq) */
-        ktqueue_remove(&kt_runq, curthr);
+        /*ktqueue_remove(&kt_runq, curthr);*/
+        /* Reset IPL level */
+        /*intr_setipl(oldIPL);*/
 
         /* Enqueue to wait queue */
         ktqueue_enqueue(q, curthr);
@@ -136,7 +142,16 @@ sched_cancellable_sleep_on(ktqueue_t *q)
         if (curthr->kt_cancelled) return -EINTR;
         else {
           /* Take curthr off run queue and add to wait queue */
-          ktqueue_remove(&kt_runq, curthr);
+          /* CURTHR SHOULD NOT BE ON THE RUN QUEUE
+
+          /* Need to set interrupt levels to protect run queue */
+          /*uint8_t oldIPL = intr_getipl();*/ /* Check what currently running IPL is */
+          /*intr_setipl(IPL_HIGH);*/ /* Block all hardware interrupts */
+          /* Take off run queue (kt_runq) */
+          /*ktqueue_remove(&kt_runq, curthr);*/
+          /* Reset IPL level */
+          /*intr_setipl(oldIPL);*/
+  
           ktqueue_enqueue(q, curthr);
         }
 
@@ -248,14 +263,19 @@ sched_switch(void)
         /* Somewhere in here: set interrupts to protect run queue
             intr_setipl(IPL_LOW) or IPL_HIGH, in include/main/interrupt.h
         */
+        uint8_t oldIPL = intr_getipl(); /* Check what currently running IPL is */
+        intr_setipl(IPL_HIGH); /* Block all hardware interrupts */
 
         /* Enqueue requesting thread on run queue if still runnable
             (dead threads become unschedulable)
         */
+        if (curthr->kt_state == KT_RUN) ktqueue_enqueue(&kt_runq, thr);
 
-        /* Pick a runnable thread */
+        /* Pick a runnable thread. Take someone off the run queue. */
+        if
 
         /* context_switch() */
+        /*context_switch(old, new);*/
 
         /* Manage curproc, curthr */
 
