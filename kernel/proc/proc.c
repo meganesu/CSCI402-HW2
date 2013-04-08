@@ -300,7 +300,7 @@ do_waitpid(pid_t pid, int options, int *status)
           list_iterate_begin(&curproc->p_children, p, proc_t, p_child_link){
             /* If child process is dead, set status to child's exit status, return child pid */
             if (p->p_state == PROC_DEAD) {
-              status = p->p_status;
+              status = &p->p_status;
               return p->p_pid;
             }
           } list_iterate_end();

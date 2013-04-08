@@ -142,7 +142,7 @@ sched_cancellable_sleep_on(ktqueue_t *q)
         if (curthr->kt_cancelled) return -EINTR;
         else {
           /* Take curthr off run queue and add to wait queue */
-          /* CURTHR SHOULD NOT BE ON THE RUN QUEUE
+          /* CURTHR SHOULD NOT BE ON THE RUN QUEUE */
 
           /* Need to set interrupt levels to protect run queue */
           /*uint8_t oldIPL = intr_getipl();*/ /* Check what currently running IPL is */
@@ -260,6 +260,8 @@ sched_cancel(struct kthread *kthr)
 void
 sched_switch(void)
 {
+        kthread_t *next_thr;
+
         /* Somewhere in here: set interrupts to protect run queue
             intr_setipl(IPL_LOW) or IPL_HIGH, in include/main/interrupt.h
         */
@@ -269,17 +271,30 @@ sched_switch(void)
         /* Enqueue requesting thread on run queue if still runnable
             (dead threads become unschedulable)
         */
-        if (curthr->kt_state == KT_RUN) ktqueue_enqueue(&kt_runq, thr);
+        if (curthr->kt_state == KT_RUN) ktqueue_enqueue(&kt_runq, curthr);
 
         /* Pick a runnable thread. Take someone off the run queue. */
-        if
 
-        /* context_switch() */
-        /*context_switch(old, new);*/
+        /* If no threads on run queue, re-enable interrupts and wait for one to occur */
+        if (sched_queue_empty(&kt_runq)) {
+          intr_wait();
+          /* Once this returns, there should be a process in the run queue */
+        }
+
+        /* Remove a thread from the run queue */
+        next_thr = ktqueue_dequeue(&kt_runq);
 
         /* Manage curproc, curthr */
+        kthread_t *old_thr = curthr;
+        proc_t *old_proc = curproc;
 
-        NOT_YET_IMPLEMENTED("PROCS: sched_switch");
+        curthr = next_thr;
+        curproc = next_thr->kt_proc;
+
+        /* Switch context from old context to new context */
+        context_switch(&old_thr->kt_ctx, &curthr->kt_ctx);
+
+        /* NOT_YET_IMPLEMENTED("PROCS: sched_switch"); */
 }
 
 /*
