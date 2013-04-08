@@ -177,17 +177,30 @@ proc_create(char *name)
 void
 proc_cleanup(int status)
 {
-        /* Set exit status */
-        curproc->p_status = status;
-        /* Reparent children processes to init process */
-        /*   Remove child proc from curproc's p_children */
-        /*   Change child proc's p_pproc parent pointer */
-        /*   Don't forget to add the child process's p_child_link to init proc's p_children */
+        /* Wake up parent if it's sleeping */
+        /*   Note: parent may be sleeping on its own wait queue, or curproc wait queue */
+        sched_broadcast_on(&curproc->p_pproc->p_wait);
+        sched_broadcast_on(&curproc->p_wait);
 
-        /* Clean up as much as possible (can't throw away page table here...) */
-        /* Wake up any waiting parent process (of curproc) */
-        /* Context switch out of thread forever */
-        NOT_YET_IMPLEMENTED("PROCS: proc_cleanup");
+        /* Reparent children processes to init process */
+        proc_t *p;
+        list_iterate_begin(&curproc->p_children, p, proc_t, p_list_link) {
+          /* Remove child proc from curproc's p_children */
+          list_remove(&p->p_child_link);
+          /* Add child to list of init proc's children */
+          list_insert_tail(&proc_initproc->p_children, &p->p_child_link);
+          /* Change child proc's p_pproc parent pointer */
+          p->p_pproc = proc_initproc;
+        } list_iterate_end();
+
+        /* Set exit status and state */
+        curproc->p_status = status;
+        curproc->p_state = PROC_DEAD;
+
+        /* Context switch out of curproc forever */
+        sched_switch();
+
+        /* NOT_YET_IMPLEMENTED("PROCS: proc_cleanup"); */
 }
 
 /*
@@ -254,12 +267,13 @@ proc_thread_exited(void *retval)
         /* Make sure threads are all done */
         /*   guaranteed, since kthread_exit sets thread state to KT_EXITED
          *   and only one thread per process, so all have exited */
-        /*proc_cleanup();*/
+        int *status_ptr = (int *) retval;
+        int status;
+        if (status_ptr == NULL) status = 0;
+        else { status = *status_ptr; }
+        proc_cleanup(status);
 
-        /* Schedule new thread to run */
-        sched_switch();
-
-        NOT_YET_IMPLEMENTED("PROCS: proc_thread_exited");
+        /* NOT_YET_IMPLEMENTED("PROCS: proc_thread_exited"); */
 }
 
 /* If pid is -1 dispose of one of the exited children of the current
@@ -291,40 +305,75 @@ do_waitpid(pid_t pid, int options, int *status)
  * @return the pid of the child process which was cleaned up, or
  * -ECHILD if there are no children of this process
  */
+
         /* If curproc has no children, return -ECHILD */
         if (list_empty(&curproc->p_children)) return -ECHILD;
 
-        /* If pid is -1, go through children and look for one that's dead, return exit status */
+        proc_t *dying_proc; /* Process we'll be cleaning up after */
+        kthread_t *thr; /* What we'll use to clean up threads */
+
+        /* If pid is -1, go through children and look for one that's dead, set exit status */
         if (pid == -1) {
           proc_t *p;
+          loop:
           list_iterate_begin(&curproc->p_children, p, proc_t, p_child_link){
             /* If child process is dead, set status to child's exit status, return child pid */
             if (p->p_state == PROC_DEAD) {
               status = &p->p_status;
-              return p->p_pid;
+              dying_proc = p; /* This is the process we want to clean up after */
+              dbg_print("Found proc to clean up after, pid -1\n");
+              goto cleaning; /* Break out of loop */
             }
           } list_iterate_end();
           /* If you get here, all your children are running, so wait on curproc wait queue until someone exits */
           sched_sleep_on(&curproc->p_wait);
+
+          /* When you get here, someone exited, so go through list again until you find it */
+          goto loop;
         }
 
-        /* If pid greater than 0, given pid is child of current process, wait on curproc wait queue for child2 to exit */
+        /* If pid greater than 0, given pid is child of current process, wait on child's wait queue for child to exit */
         /* If pid not a child of curproc, return -ECHILD */
         else if (pid > 0 ) {
-
+          proc_t *p;
+          list_iterate_begin(&curproc->p_children, p, proc_t, p_child_link){
+            if (p->p_pid == pid) { /* If this is the child you're looking for, wait on its wait queue */
+              while (p->p_state != PROC_DEAD) {
+                sched_sleep_on(&p->p_wait);
+              }
+              /* If you get here, p is dead */
+              status = &p->p_status;
+              dying_proc = p;
+              dbg_print("Found proc to clean up after, pid > 0\n");
+              goto cleaning;
+            }
+          } list_iterate_end();
+          /* If you get here, pid didn't match any of your children. */
+          return -ECHILD;
         }
-        /* Wait for child process to terminate (possibly) */
 
-        /* Call kthread_destroy */
+        cleaning:
 
-        /* Unlink child process */
+        /* Iterate through all threads in process, calling kthread_destroy on each */
+        list_iterate_begin(&dying_proc->p_threads, thr, kthread_t, kt_plink){
+          kthread_destroy(thr);
+        } list_iterate_end();
+
+        /* Unlink child process from list of all processes and list of curproc's children */
+        list_remove(&dying_proc->p_list_link);
+        list_remove(&dying_proc->p_child_link);
 
         /* Free child page table */
+        pt_destroy_pagedir(dying_proc->p_pagedir);
+
+        /* Set value of pid to return after cleanup */
+        pid_t pid_cleaned = dying_proc->p_pid;
 
         /* Free child proc structure (using proc slab allocator) */
-        /* slab_obj_free(proc_allocator, PROCESS_TO_DELETE); */
-        NOT_YET_IMPLEMENTED("PROCS: do_waitpid");
-        return 0;
+        slab_obj_free(proc_allocator, dying_proc);
+
+        /* NOT_YET_IMPLEMENTED("PROCS: do_waitpid"); */
+        return pid_cleaned;
 }
 
 /*
@@ -336,15 +385,15 @@ do_waitpid(pid_t pid, int options, int *status)
 void
 do_exit(int status)
 {
-        curthr->kt_state = KT_EXITED;
-        proc_cleanup(status);
-        sched_switch();
         /* Cancel all threads */
         /* Join with threads */
         /* Set thread state */
         /* Exit from current thread */
 
-        NOT_YET_IMPLEMENTED("PROCS: do_exit");
+        curthr->kt_state = KT_EXITED;
+        proc_cleanup(status);
+
+        /* NOT_YET_IMPLEMENTED("PROCS: do_exit"); */
 }
 
 size_t
