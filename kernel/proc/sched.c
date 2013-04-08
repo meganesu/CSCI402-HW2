@@ -174,11 +174,11 @@ sched_wakeup_on(ktqueue_t *q)
         /* Dequeue one from given queue */
         kthread_t *wake_thr = ktqueue_dequeue(q);
 
-        /* Make runnable */
-        sched_make_runnable(wake_thr);
-
         /* Reset pointer to queue wake_thr is waiting on */
         wake_thr->kt_wchan = NULL;
+
+        /* Make runnable */
+        sched_make_runnable(wake_thr);
 
         /* NOT_YET_IMPLEMENTED("PROCS: sched_wakeup_on"); */
         return wake_thr;
@@ -190,8 +190,8 @@ sched_broadcast_on(ktqueue_t *q)
         /* Dequeue all from wait queue and make runnable */
         while (!sched_queue_empty(q)) {
           kthread_t *wake_thr = ktqueue_dequeue(q);
-          sched_make_runnable(wake_thr);
           wake_thr->kt_wchan = NULL;
+          sched_make_runnable(wake_thr);
         }
 
         /* NOT_YET_IMPLEMENTED("PROCS: sched_broadcast_on"); */
@@ -214,8 +214,8 @@ sched_cancel(struct kthread *kthr)
         /* If cancellable sleep, wake from queue it's waiting on */
         if (kthr->kt_state == KT_SLEEP_CANCELLABLE) {
           ktqueue_dequeue(kthr->kt_wchan);
-          sched_make_runnable(kthr);
           kthr->kt_wchan = NULL;
+          sched_make_runnable(kthr);
         }
 
         NOT_YET_IMPLEMENTED("PROCS: sched_cancel");

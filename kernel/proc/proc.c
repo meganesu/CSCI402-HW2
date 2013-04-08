@@ -319,7 +319,7 @@ do_waitpid(pid_t pid, int options, int *status)
           list_iterate_begin(&curproc->p_children, p, proc_t, p_child_link){
             /* If child process is dead, set status to child's exit status, return child pid */
             if (p->p_state == PROC_DEAD) {
-              status = &p->p_status;
+              *status = p->p_status;
               dying_proc = p; /* This is the process we want to clean up after */
               dbg_print("Found proc to clean up after, pid -1\n");
               goto cleaning; /* Break out of loop */
@@ -342,7 +342,7 @@ do_waitpid(pid_t pid, int options, int *status)
                 sched_sleep_on(&p->p_wait);
               }
               /* If you get here, p is dead */
-              status = &p->p_status;
+              *status = p->p_status;
               dying_proc = p;
               dbg_print("Found proc to clean up after, pid > 0\n");
               goto cleaning;
@@ -389,7 +389,6 @@ do_exit(int status)
         /* Join with threads */
         /* Set thread state */
         /* Exit from current thread */
-
         curthr->kt_state = KT_EXITED;
         proc_cleanup(status);
 
