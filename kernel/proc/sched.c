@@ -213,7 +213,7 @@ sched_cancel(struct kthread *kthr)
 
         /* If cancellable sleep, wake from queue it's waiting on */
         if (kthr->kt_state == KT_SLEEP_CANCELLABLE) {
-          ktqueue_dequeue(kthr->kt_wchan);
+          ktqueue_remove(kthr->kt_wchan, kthr);
           kthr->kt_wchan = NULL;
           sched_make_runnable(kthr);
         }

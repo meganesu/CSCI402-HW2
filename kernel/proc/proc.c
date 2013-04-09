@@ -184,13 +184,17 @@ proc_cleanup(int status)
 
         /* Reparent children processes to init process */
         proc_t *p;
-        list_iterate_begin(&curproc->p_children, p, proc_t, p_list_link) {
+        list_iterate_begin(&curproc->p_children, p, proc_t, p_child_link) {
+
           /* Remove child proc from curproc's p_children */
           list_remove(&p->p_child_link);
+
           /* Add child to list of init proc's children */
           list_insert_tail(&proc_initproc->p_children, &p->p_child_link);
+
           /* Change child proc's p_pproc parent pointer */
           p->p_pproc = proc_initproc;
+
         } list_iterate_end();
 
         /* Set exit status and state */

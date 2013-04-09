@@ -144,6 +144,10 @@ kthread_cancel(kthread_t *kthr, void *retval)
         }
 
         /* if you get here, thread is sleeping */
+        kthr->kt_cancelled = 1;
+        kthr->kt_retval = retval;
+
+        /*   thread queued cancellably is dequeued */
         if (kthr->kt_state == KT_SLEEP_CANCELLABLE) {
             /* Wake from queue it's sleeping on, add to run queue */
             sched_cancel(kthr);
@@ -155,10 +159,6 @@ kthread_cancel(kthread_t *kthr, void *retval)
 
            Thread code hears about cancellation after
         */
-
-        /* Set retval and state in thread proc */
-        kthr->kt_retval = retval;
-        kthr->kt_state = KT_EXITED;
 
         NOT_YET_IMPLEMENTED("PROCS: kthread_cancel");
 }
