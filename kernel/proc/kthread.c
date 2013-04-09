@@ -160,7 +160,7 @@ kthread_cancel(kthread_t *kthr, void *retval)
            Thread code hears about cancellation after
         */
 
-        NOT_YET_IMPLEMENTED("PROCS: kthread_cancel");
+        /* NOT_YET_IMPLEMENTED("PROCS: kthread_cancel"); */
 }
 
 /*

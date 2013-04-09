@@ -218,7 +218,7 @@ sched_cancel(struct kthread *kthr)
           sched_make_runnable(kthr);
         }
 
-        NOT_YET_IMPLEMENTED("PROCS: sched_cancel");
+        /* NOT_YET_IMPLEMENTED("PROCS: sched_cancel"); */
 }
 
 /*
