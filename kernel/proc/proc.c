@@ -132,7 +132,7 @@ proc_create(char *name)
         list_insert_tail(&_proc_list, &new_proc->p_list_link);
         dbg_print("Initialized and set list link for proc list\n");
         /*   p_child_link: Link for list of children of parent process */
-        if (new_proc->p_pid > 0) { /* If you're the idle process, you don't have a parent */
+        if (new_proc->p_pid != PID_IDLE) { /* If you're the idle process, you don't have a parent */
           list_link_init(&new_proc->p_child_link);
           dbg_print("Initialized list link for parent proc's child list\n");
           list_insert_tail(&curproc->p_children, &new_proc->p_child_link);
@@ -218,7 +218,45 @@ proc_cleanup(int status)
 void
 proc_kill(proc_t *p, int status)
 {
-        NOT_YET_IMPLEMENTED("PROCS: proc_kill");
+        if (p == curproc) {
+          dbg_print("Killing curproc\n");
+          do_exit(status); /* curproc will never return from here */
+        }
+        
+        /* If you get here, you need to do equivalent of do_exit() and proc_cleanup() for p */
+
+        /* Set exit state for all kthreads in p */
+        kthread_t *thr;
+        list_iterate_begin(&p->p_threads, thr, kthread_t, kt_plink) {
+          thr->kt_state = KT_EXITED;
+        } list_iterate_end();
+
+        /* Wake up parent if it's sleeping */
+        sched_broadcast_on(&p->p_pproc->p_wait);
+        sched_broadcast_on(&p->p_wait);
+
+        /* Reparent children processes to init process */
+        proc_t *p_child;
+        list_iterate_begin(&p->p_children, p_child, proc_t, p_child_link) {
+
+          /* Remove child proc from p's p_children */
+          list_remove(&p_child->p_child_link);
+
+          /* Add child to list of init proc's children */
+          list_insert_tail(&proc_initproc->p_children, &p_child->p_child_link);
+
+          /* Change child proc's p_pproc parent pointer */
+          p_child->p_pproc = proc_initproc;
+
+        } list_iterate_end();
+
+        /* Set exit status and state */
+        p->p_status = status;
+        p->p_state = PROC_DEAD;
+
+        /* Don't need to do sched_switch(), since p isn't running in current context */
+
+        /* NOT_YET_IMPLEMENTED("PROCS: proc_kill"); */
 }
 
 /*
@@ -232,11 +270,36 @@ proc_kill_all()
 {
         /* Cancel all threads in processes not children of idle process */
 
-        /* Walk global process list and spread bad news */
+        /* Walk global process list and spread bad news. DON'T KILL INITPROC. */
 
         /* Call proc_kill() somewhere in this function */
 
-        NOT_YET_IMPLEMENTED("PROCS: proc_kill_all");
+        /* proc_kill() on curproc LAST */
+
+        proc_t *p;
+        list_iterate_begin(&_proc_list, p, proc_t, p_list_link) {
+          dbg_print("Process alive before walking list: %d\n", p->p_pid);
+        } list_iterate_end();
+
+        list_iterate_begin(&_proc_list, p, proc_t, p_list_link) {
+          if (p != curproc && p->p_pid > PID_INIT) { /* Don't kill idle, init, or curproc */
+            proc_kill(p, 0);
+          }
+        } list_iterate_end();
+        dbg_print("Killed all other processes. Yay.\n");
+
+        list_iterate_begin(&_proc_list, p, proc_t, p_list_link) {
+          dbg_print("Process still alive: %d\n", p->p_pid);
+        } list_iterate_end();
+        dbg_print("curproc pid: %d\n", curproc->p_pid);
+
+        /* Once you've gotten rid of all of these, then you can kill curproc */
+        if (curproc->p_pid > PID_INIT) {
+          proc_kill(curproc, 0);
+          dbg_print("Killed current process. Yay.\n");
+        }
+
+        /* NOT_YET_IMPLEMENTED("PROCS: proc_kill_all"); */
 }
 
 proc_t *
@@ -363,9 +426,9 @@ do_waitpid(pid_t pid, int options, int *status)
           kthread_destroy(thr);
         } list_iterate_end();
 
-        /* Unlink child process from list of all processes and list of curproc's children */
-        list_remove(&dying_proc->p_list_link);
+        /* Unlink from list of child processes and list of all processes */
         list_remove(&dying_proc->p_child_link);
+        list_remove(&dying_proc->p_list_link);
 
         /* Free child page table */
         pt_destroy_pagedir(dying_proc->p_pagedir);

@@ -15,7 +15,10 @@
 void
 kmutex_init(kmutex_t *mtx)
 {
-        NOT_YET_IMPLEMENTED("PROCS: kmutex_init");
+        sched_queue_init(&mtx->km_waitq);
+        mtx->km_holder = NULL;
+
+        /* NOT_YET_IMPLEMENTED("PROCS: kmutex_init"); */
 }
 
 /*
@@ -27,7 +30,15 @@ kmutex_init(kmutex_t *mtx)
 void
 kmutex_lock(kmutex_t *mtx)
 {
-        NOT_YET_IMPLEMENTED("PROCS: kmutex_lock");
+        /* If someone has the mutex, go to sleep */
+        while (mtx->km_holder != NULL) {
+          sched_sleep_on(&mtx->km_waitq);
+        }
+
+        /* If you get here, you've been woken up and no one owns mutex */
+        mtx->km_holder = curthr;
+
+        /* NOT_YET_IMPLEMENTED("PROCS: kmutex_lock"); */
 }
 
 /*
@@ -37,8 +48,20 @@ kmutex_lock(kmutex_t *mtx)
 int
 kmutex_lock_cancellable(kmutex_t *mtx)
 {
-        NOT_YET_IMPLEMENTED("PROCS: kmutex_lock_cancellable");
+        int retval;
+
+        /* If someone has the mutex, go to sleep */
+        while (mtx->km_holder != NULL) {
+          retval = sched_cancellable_sleep_on(&mtx->km_waitq);
+
+          if (retval == -EINTR) return -EINTR;
+        }
+
+        /* If you get here, you've been woken up and no one owns mutex */
+        mtx->km_holder = curthr;
         return 0;
+
+        /* NOT_YET_IMPLEMENTED("PROCS: kmutex_lock_cancellable"); */
 }
 
 /*
@@ -58,5 +81,12 @@ kmutex_lock_cancellable(kmutex_t *mtx)
 void
 kmutex_unlock(kmutex_t *mtx)
 {
-        NOT_YET_IMPLEMENTED("PROCS: kmutex_unlock");
+        mtx->km_holder = NULL;
+
+        if (sched_queue_empty(&mtx->km_waitq)) return;
+
+        /* Wake up someone who's waiting on the mutex */
+        kthread_t *thr = sched_wakeup_on(&mtx->km_waitq);
+
+        /* NOT_YET_IMPLEMENTED("PROCS: kmutex_unlock"); */
 }
