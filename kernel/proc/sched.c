@@ -162,6 +162,7 @@ sched_cancellable_sleep_on(ktqueue_t *q)
         sched_switch();
 
         /* NOT_YET_IMPLEMENTED("PROCS: sched_cancellable_sleep_on"); */
+        if (curthr->kt_cancelled) return -EINTR;
         return 0;
 }
 

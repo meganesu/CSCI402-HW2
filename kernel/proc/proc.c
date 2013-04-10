@@ -86,7 +86,7 @@ proc_create(char *name)
         proc_t *new_proc = slab_obj_alloc(proc_allocator); /* slab_obj_alloc(struct slab_allocator *allocator) */
         /* Returns pointer (void *) to object allocated */
 
-        dbg_print("Allocated proc structure\n");
+        /* dbg_print("Allocated proc structure\n"); */
 
         /* Initialize data structures */
         /*   p_pid: Process ID number */
@@ -94,55 +94,56 @@ proc_create(char *name)
         dbg_print("Initialize pid, %d\n", new_proc->p_pid);
 
         /* Set proc_initproc if init process (p_pid == 1) */
-        if (new_proc->p_pid == 1) {proc_initproc = new_proc;
-          dbg_print("Set proc_initproc if pid == 1\n"); }
+        if (new_proc->p_pid == 1) { proc_initproc = new_proc;
+          /* dbg_print("Set proc_initproc if pid == 1\n");  */
+        }
 
         /*   p_comm[PROC_NAME_LEN]: Name of process */
         strncpy((char *)&new_proc->p_comm, name, PROC_NAME_LEN);
         /* strncpy doesn't necessarily add the null character to the end of the string */
         new_proc->p_comm[PROC_NAME_LEN-1] = '\0';
-        dbg_print("Initialize name of proc\n");
+        /* dbg_print("Initialize name of proc\n"); */
 
         /*   p_threads: List of threads for process */
         list_init(&new_proc->p_threads);
-        dbg_print("Initialize list of proc threads\n");
+        /* dbg_print("Initialize list of proc threads\n"); */
         /*   p_children: List for process's children processes */
         list_init(&new_proc->p_children);
-        dbg_print("Initialized list of proc children\n");
+        /* dbg_print("Initialized list of proc children\n"); */
 
         /*   *p_pproc: Pointer to parent process
          *               since curproc called proc_create(), that's the parent
          */
         new_proc->p_pproc = curproc;
-        dbg_print("Initialized parent proc pointer\n");
+        /* dbg_print("Initialized parent proc pointer\n"); */
 
         /*   p_status: Don't need to set until process exits */
 
         /*   p_state: Should be PROC_RUNNING */
         new_proc->p_state = PROC_RUNNING;
-        dbg_print("Set proc state\n");
+        /* dbg_print("Set proc state\n"); */
 
         /*   p_wait: Wait queue for process */
         sched_queue_init(&new_proc->p_wait);
-        dbg_print("Initialized wait queue for proc\n");
+        /* dbg_print("Initialized wait queue for proc\n"); */
 
         /* Make links. Add to child list for curproc. Add to list of all processes. */
         /*   p_list_link: Link for list of all processes */
         list_link_init(&new_proc->p_list_link);
         list_insert_tail(&_proc_list, &new_proc->p_list_link);
-        dbg_print("Initialized and set list link for proc list\n");
+        /* dbg_print("Initialized and set list link for proc list\n"); */
         /*   p_child_link: Link for list of children of parent process */
         if (new_proc->p_pid != PID_IDLE) { /* If you're the idle process, you don't have a parent */
           list_link_init(&new_proc->p_child_link);
-          dbg_print("Initialized list link for parent proc's child list\n");
+          /* dbg_print("Initialized list link for parent proc's child list\n"); */
           list_insert_tail(&curproc->p_children, &new_proc->p_child_link);
-          dbg_print("Set list link for parent proc's child list\n");
+          /* dbg_print("Set list link for parent proc's child list\n"); */
         }
 
         /* Set up page table. pt_create_pagedir(), in kernel/mm/pagetable.c */
         /*   *p_pagedir */
         new_proc->p_pagedir = pt_create_pagedir(); /* Returns pointer to pagedir_t created */
-        dbg_print("Allocated page table\n");
+        /* dbg_print("Allocated page table\n"); */
 
         return new_proc;
 
@@ -223,38 +224,11 @@ proc_kill(proc_t *p, int status)
           do_exit(status); /* curproc will never return from here */
         }
         
-        /* If you get here, you need to do equivalent of do_exit() and proc_cleanup() for p */
-
-        /* Set exit state for all kthreads in p */
+        /* If you get here, you need to cancel thread for p */
         kthread_t *thr;
         list_iterate_begin(&p->p_threads, thr, kthread_t, kt_plink) {
-          thr->kt_state = KT_EXITED;
+          kthread_cancel(thr, &status);
         } list_iterate_end();
-
-        /* Wake up parent if it's sleeping */
-        sched_broadcast_on(&p->p_pproc->p_wait);
-        sched_broadcast_on(&p->p_wait);
-
-        /* Reparent children processes to init process */
-        proc_t *p_child;
-        list_iterate_begin(&p->p_children, p_child, proc_t, p_child_link) {
-
-          /* Remove child proc from p's p_children */
-          list_remove(&p_child->p_child_link);
-
-          /* Add child to list of init proc's children */
-          list_insert_tail(&proc_initproc->p_children, &p_child->p_child_link);
-
-          /* Change child proc's p_pproc parent pointer */
-          p_child->p_pproc = proc_initproc;
-
-        } list_iterate_end();
-
-        /* Set exit status and state */
-        p->p_status = status;
-        p->p_state = PROC_DEAD;
-
-        /* Don't need to do sched_switch(), since p isn't running in current context */
 
         /* NOT_YET_IMPLEMENTED("PROCS: proc_kill"); */
 }
@@ -278,7 +252,7 @@ proc_kill_all()
 
         proc_t *p;
         list_iterate_begin(&_proc_list, p, proc_t, p_list_link) {
-          dbg_print("Process alive before walking list: %d\n", p->p_pid);
+          /* dbg_print("Process alive before walking list: %d\n", p->p_pid); */
         } list_iterate_end();
 
         list_iterate_begin(&_proc_list, p, proc_t, p_list_link) {
@@ -286,17 +260,17 @@ proc_kill_all()
             proc_kill(p, 0);
           }
         } list_iterate_end();
-        dbg_print("Killed all other processes. Yay.\n");
+        /* dbg_print("Cancel request sent to all other processes. Yay.\n"); */
 
         list_iterate_begin(&_proc_list, p, proc_t, p_list_link) {
-          dbg_print("Process still alive: %d\n", p->p_pid);
+          /* dbg_print("Process still alive: %d\n", p->p_pid); */
         } list_iterate_end();
-        dbg_print("curproc pid: %d\n", curproc->p_pid);
+        /* dbg_print("curproc pid: %d\n", curproc->p_pid); */
 
         /* Once you've gotten rid of all of these, then you can kill curproc */
         if (curproc->p_pid > PID_INIT) {
           proc_kill(curproc, 0);
-          dbg_print("Killed current process. Yay.\n");
+          /* dbg_print("Killed current process. Yay.\n"); */
         }
 
         /* NOT_YET_IMPLEMENTED("PROCS: proc_kill_all"); */

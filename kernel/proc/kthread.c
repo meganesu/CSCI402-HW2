@@ -150,6 +150,7 @@ kthread_cancel(kthread_t *kthr, void *retval)
         /*   thread queued cancellably is dequeued */
         if (kthr->kt_state == KT_SLEEP_CANCELLABLE) {
             /* Wake from queue it's sleeping on, add to run queue */
+            dbg_print("Cancelling sleep on process %d\n", kthr->kt_proc->p_pid);
             sched_cancel(kthr);
         }
 
