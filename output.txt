@@ -1,0 +1,1815 @@
+/usr/bin/qemu-system-i386
+[32;40mKernel binary:
+[0m[32;40m  text: 0xc0000000-0xc003e000
+[0m[32;40m  data: 0xc003e000-0xc003e8e0
+[0m[32;40m  bss:  0xc003e8e0-0xc0049000
+[0m[31;40mPhysical Memory Map:
+[0m[31;40m    0x00000000-0x0009f400: Usable
+[0m[31;40m    0x0009f400-0x000a0000: Reserved
+[0m[31;40m    0x000f0000-0x00100000: Reserved
+[0m[31;40m    0x00100000-0x01ffd000: Usable
+[0m[31;40mHighest usable physical memory: 0x01ffd000
+[0m[31;40mAvailable memory: 0x01efd000
+[0m[31;40mPage System adding range: 0xc0055400 to 0xc1efd000
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 0
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "slab_allocators" (0xc0048884)
+[0m[31;40m  Object Size:   32
+[0m[31;40m  Order:         0
+[0m[31;40m  Slab Capacity: 102
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 1 pages (addr 0xc1efb000)
+[0m[31;40mmm/slab.c:253 _slab_allocator_grow(): Growing cache "slab_allocators" (0xc0048884), new slab 0xc1efbff0 (1 pages)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb000 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 1
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 0
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "size-64" (0xc1efb004)
+[0m[31;40m  Object Size:   72
+[0m[31;40m  Order:         0
+[0m[31;40m  Slab Capacity: 51
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb028 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 2
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 48
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 4, waste 0
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "size-128" (0xc1efb02c)
+[0m[31;40m  Object Size:   136
+[0m[31;40m  Order:         4
+[0m[31;40m  Slab Capacity: 455
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb050 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 3
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 0
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "size-256" (0xc1efb054)
+[0m[31;40m  Object Size:   264
+[0m[31;40m  Order:         0
+[0m[31;40m  Slab Capacity: 15
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb078 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 4
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 384
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 1, waste 256
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 2, waste 0
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "size-512" (0xc1efb07c)
+[0m[31;40m  Object Size:   520
+[0m[31;40m  Order:         2
+[0m[31;40m  Slab Capacity: 31
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb0a0 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 5
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 960
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 1, waste 896
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 2, waste 768
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 3, waste 512
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 4, waste 0
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "size-1024" (0xc1efb0a4)
+[0m[31;40m  Object Size:   1032
+[0m[31;40m  Order:         4
+[0m[31;40m  Slab Capacity: 63
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb0c8 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 6
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 2016
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 1, waste 1984
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 2, waste 1920
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 3, waste 1792
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 4, waste 1536
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "size-2048" (0xc1efb0cc)
+[0m[31;40m  Object Size:   2056
+[0m[31;40m  Order:         4
+[0m[31;40m  Slab Capacity: 31
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb0f0 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 7
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 1, waste 4064
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 2, waste 4032
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 3, waste 3968
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 4, waste 3840
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "size-4096" (0xc1efb0f4)
+[0m[31;40m  Object Size:   4104
+[0m[31;40m  Order:         4
+[0m[31;40m  Slab Capacity: 15
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb118 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 8
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 2, waste 8160
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 3, waste 8128
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 4, waste 8064
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "size-8192" (0xc1efb11c)
+[0m[31;40m  Object Size:   8200
+[0m[31;40m  Order:         4
+[0m[31;40m  Slab Capacity: 7
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb140 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 9
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 3, waste 16352
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 4, waste 16320
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "size-16384" (0xc1efb144)
+[0m[31;40m  Object Size:   16392
+[0m[31;40m  Order:         4
+[0m[31;40m  Slab Capacity: 3
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb168 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 10
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 4, waste 32736
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "size-32768" (0xc1efb16c)
+[0m[31;40m  Object Size:   32776
+[0m[31;40m  Order:         4
+[0m[31;40m  Slab Capacity: 1
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb190 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 11
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 5, waste 65504
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "size-65536" (0xc1efb194)
+[0m[31;40m  Object Size:   65544
+[0m[31;40m  Order:         5
+[0m[31;40m  Slab Capacity: 1
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb1b8 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 12
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 6, waste 131040
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "size-131072" (0xc1efb1bc)
+[0m[31;40m  Object Size:   131080
+[0m[31;40m  Order:         6
+[0m[31;40m  Slab Capacity: 1
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb1e0 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 13
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 7, waste 262112
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "size-262144" (0xc1efb1e4)
+[0m[31;40m  Object Size:   262152
+[0m[31;40m  Order:         7
+[0m[31;40m  Slab Capacity: 1
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb208 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 14
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 48
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 1, waste 40
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 2, waste 24
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 4, waste 0
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "pframe" (0xc1efb20c)
+[0m[31;40m  Object Size:   64
+[0m[31;40m  Order:         4
+[0m[31;40m  Slab Capacity: 910
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1ef9000 (1) into 0xc1ef9000 and 0xc1efa000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 1 pages (addr 0xc1efa000)
+[0m[31;40mmm/slab.c:253 _slab_allocator_grow(): Growing cache "size-64" (0xc1efb004), new slab 0xc1efaff0 (1 pages)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa000 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 1
+[0m[32;40m--- ACPI INIT ---
+[0m[32;40mrsdp addr:  000fd9a0
+[0m[32;40mrsdt addr:  c1efa008
+[0m[32;40mrev:        0
+[0m[32;40moem:        BOCHS 6
+[0m[32;40ments:	[0m[37;40mmm/page.c:174 __page_split(): split 0xc1ed5000 (5) into 0xc1ed5000 and 0xc1ee5000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1ee5000)
+[0m[31;40mmm/slab.c:253 _slab_allocator_grow(): Growing cache "size-128" (0xc1efb02c), new slab 0xc1ef4ff0 (16 pages)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee5000 from "size-128" (0xc1efb02c), slab 0xc1efb02c, inuse 1
+[0m[32;40mFACP [0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 1 pages (addr 0xc1ef9000)
+[0m[31;40mmm/slab.c:253 _slab_allocator_grow(): Growing cache "size-256" (0xc1efb054), new slab 0xc1ef9ff0 (1 pages)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ef9000 from "size-256" (0xc1efb054), slab 0xc1efb054, inuse 1
+[0m[32;40mSSDT [0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee5090 from "size-128" (0xc1efb02c), slab 0xc1efb02c, inuse 2
+[0m[32;40mAPIC [0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa050 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 2
+[0m[32;40mHPET [0m[32;40m
+[0m[32;40m--- APIC INIT ---
+[0m[32;40mlocal apic paddr:     0xfee00000
+[0m[32;40mPC-AT compatible:    1
+[0m[32;40mLAPIC:
+[0m[32;40m   id:         0x00
+[0m[32;40m   processor:  0x000
+[0m[32;40m   enabled:    1
+[0m[32;40mIOAPIC:
+[0m[32;40m   id:         0x01
+[0m[32;40m   base paddr:  0xfec00000
+[0m[32;40m   inti addr:   0x00000000
+[0m[32;40mUnknown APIC type:  0x2
+[0m[32;40mUnknown APIC type:  0x2
+[0m[32;40mUnknown APIC type:  0x2
+[0m[32;40mUnknown APIC type:  0x2
+[0m[32;40mUnknown APIC type:  0x2
+[0m[32;40mLocal APIC 0x00 Configuration:
+[0m[32;40m    APIC Version:         0x11
+[0m[32;40m    Spurious Vector:      0x000001ff
+[0m[32;40mIO APIC 0x00 Configuration:
+[0m[32;40m    APIC Version:         0x11
+[0m[32;40m    Maximum Redirection:  0x17
+[0m[32;40mmain/apic.c:263 apic_setspur(): mapping spurious interrupts to %hu
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb230 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 15
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 20
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 1, waste 0
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "vmmap" (0xc1efb234)
+[0m[31;40m  Object Size:   20
+[0m[31;40m  Order:         1
+[0m[31;40m  Slab Capacity: 292
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb258 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 16
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 0
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "vmarea" (0xc1efb25c)
+[0m[31;40m  Object Size:   52
+[0m[31;40m  Order:         0
+[0m[31;40m  Slab Capacity: 68
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb280 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 17
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 240
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 1, waste 16
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "proc" (0xc1efb284)
+[0m[31;40m  Object Size:   472
+[0m[31;40m  Order:         1
+[0m[31;40m  Slab Capacity: 17
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb2a8 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 18
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 48
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 1, waste 28
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 4, waste 0
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "kthread" (0xc1efb2ac)
+[0m[31;40m  Object Size:   76
+[0m[31;40m  Order:         4
+[0m[31;40m  Slab Capacity: 780
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1ef5000 (2) into 0xc1ef5000 and 0xc1ef7000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1ef7000 (1) into 0xc1ef7000 and 0xc1ef8000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 1 pages (addr 0xc1ef8000)
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1ef5000)
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1ed5000 (4) into 0xc1ed5000 and 0xc1edd000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1edd000 (3) into 0xc1edd000 and 0xc1ee1000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1ee1000 (2) into 0xc1ee1000 and 0xc1ee3000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1ee3000)
+[0m[31;40mmm/slab.c:253 _slab_allocator_grow(): Growing cache "proc" (0xc1efb284), new slab 0xc1ee4fe0 (2 pages)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3000 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 1
+[0mInitialize pid, 0
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1ee1000)
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (7) into 0xc1e55000 and 0xc1e95000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e95000 (6) into 0xc1e95000 and 0xc1eb5000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1eb5000 (5) into 0xc1eb5000 and 0xc1ec5000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1ec5000)
+[0m[31;40mmm/slab.c:253 _slab_allocator_grow(): Growing cache "kthread" (0xc1efb2ac), new slab 0xc1ed4ff0 (16 pages)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5000 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 1
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1eb5000)
+[0mCreated idle proc and thread
+Made it to idleproc_run
+[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee31e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 2
+[0mInitialize pid, 1
+[37;40mmm/page.c:174 __page_split(): split 0xc1edd000 (2) into 0xc1edd000 and 0xc1edf000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edf000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5054 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 2
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e95000 (5) into 0xc1e95000 and 0xc1ea5000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1ea5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa0a0 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 3
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa0f0 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 4
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa140 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 5
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa190 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 6
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa1e0 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 7
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa230 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 8
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa280 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 9
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa2d0 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 10
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa320 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 11
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa370 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 12
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa3c0 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 13
+[0m[0mutil/init.c:106 init_call_all(): Initialization functions and dependencies:
+[0m[0msched_init (0xc00133e6): [0m[0m
+[0m[0mfile_init (0xc0017477): [0m[0m
+[0m[0mvfs_init (0xc0017d0f): [0m[0mvnode_init [0m[0mfile_init [0m[0m
+[0m[0mvnode_init (0xc00182f3): [0m[0m
+[0m[0mbinfmt_init (0xc001a6e7): [0m[0m
+[0m[0melf32_init (0xc001cac1): [0m[0mbinfmt_init [0m[0m
+[0m[0msyscall_init (0xc001ce05): [0m[0m
+[0m[0mkshell_init (0xc001ece0): [0m[0m
+[0m[0mutil/init.c:63 _init_call(): Calling sched_init (0xc00133e6)
+[0m[0mutil/init.c:63 _init_call(): Calling file_init (0xc0017477)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb2d0 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 19
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 16
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "file" (0xc1efb2d4)
+[0m[31;40m  Object Size:   24
+[0m[31;40m  Order:         0
+[0m[31;40m  Slab Capacity: 127
+[0m[0mutil/init.c:51 _init_call(): 'vfs_init' depends on 'vnode_init': [0m[0mcalling
+[0m[0mutil/init.c:63 _init_call(): Calling vnode_init (0xc00182f3)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efb2f8 from "slab_allocators" (0xc0048884), slab 0xc0048884, inuse 20
+[0m[31;40mmm/slab.c:139 _calc_slab_size(): calc_slab_size: minorder 0, waste 112
+[0m[31;40mmm/slab.c:150 _calc_slab_size(): calc_slab_size: replacing with order 2, waste 0
+[0m[31;40mmm/slab.c:182 _allocator_init(): Initialized new slab allocator:
+[0m[31;40m  Name:          "vnode" (0xc1efb2fc)
+[0m[31;40m  Object Size:   116
+[0m[31;40m  Order:         2
+[0m[31;40m  Slab Capacity: 132
+[0m[0mutil/init.c:51 _init_call(): 'vfs_init' depends on 'file_init': [0m[0malready called
+[0m[0mutil/init.c:63 _init_call(): Calling vfs_init (0xc0017d0f)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee5120 from "size-128" (0xc1efb02c), slab 0xc1efb02c, inuse 3
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1ed5000 (3) into 0xc1ed5000 and 0xc1ed9000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 4 pages (addr 0xc1ed9000)
+[0m[31;40mmm/slab.c:253 _slab_allocator_grow(): Growing cache "size-512" (0xc1efb07c), new slab 0xc1edcff0 (4 pages)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ed9000 from "size-512" (0xc1efb07c), slab 0xc1efb07c, inuse 1
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa410 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 14
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 1 pages (addr 0xc1ef7000)
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 4 pages (addr 0xc1ed5000)
+[0m[31;40mmm/slab.c:253 _slab_allocator_grow(): Growing cache "vnode" (0xc1efb2fc), new slab 0xc1ed8ff0 (4 pages)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ed5000 from "vnode" (0xc1efb2fc), slab 0xc1efb2fc, inuse 1
+[0m[0mutil/init.c:63 _init_call(): Calling binfmt_init (0xc001a6e7)
+[0m[0mutil/init.c:51 _init_call(): 'elf32_init' depends on 'binfmt_init': [0m[0malready called
+[0m[0mutil/init.c:63 _init_call(): Calling elf32_init (0xc001cac1)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1efa460 from "size-64" (0xc1efb004), slab 0xc1efb004, inuse 15
+[0m[1;31;40mapi/binfmt.c:36 binfmt_add(): Registering binary loader ELF32
+[0m[0mutil/init.c:63 _init_call(): Calling syscall_init (0xc001ce05)
+[0m[0mutil/init.c:63 _init_call(): Calling kshell_init (0xc001ece0)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee51b0 from "size-128" (0xc1efb02c), slab 0xc1efb02c, inuse 4
+[0m[31;40mtest/kshell/kshell.c:64 kshell_add_command(): Added help command
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee5240 from "size-128" (0xc1efb02c), slab 0xc1efb02c, inuse 5
+[0m[31;40mtest/kshell/kshell.c:64 kshell_add_command(): Added echo command
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee52d0 from "size-128" (0xc1efb02c), slab 0xc1efb02c, inuse 6
+[0m[31;40mtest/kshell/kshell.c:64 kshell_add_command(): Added exit command
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1efa0a0 from "size-64" (0xc1efb004), slab 0xc1efaff0, inuse 14
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1efa0f0 from "size-64" (0xc1efb004), slab 0xc1efaff0, inuse 13
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1efa190 from "size-64" (0xc1efb004), slab 0xc1efaff0, inuse 12
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1efa1e0 from "size-64" (0xc1efb004), slab 0xc1efaff0, inuse 11
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1efa140 from "size-64" (0xc1efb004), slab 0xc1efaff0, inuse 10
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1efa230 from "size-64" (0xc1efb004), slab 0xc1efaff0, inuse 9
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1efa280 from "size-64" (0xc1efb004), slab 0xc1efaff0, inuse 8
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1efa320 from "size-64" (0xc1efb004), slab 0xc1efaff0, inuse 7
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1efa2d0 from "size-64" (0xc1efb004), slab 0xc1efaff0, inuse 6
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1efa370 from "size-64" (0xc1efb004), slab 0xc1efaff0, inuse 5
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1efa3c0 from "size-64" (0xc1efb004), slab 0xc1efaff0, inuse 4
+[0mwaitpid any test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 2
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0mFound proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mchild (2) exited: 23
+waitpid test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 3
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0mFound proc to clean up after, pid > 0
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mwaitpid test (3) exited: 32
+kthread exit test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 4
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0mFound proc to clean up after, pid > 0
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mkthread exit test (4) exited: 0
+many test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 5
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee35a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 4
+[0mInitialize pid, 6
+[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (6) into 0xc1e55000 and 0xc1e75000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e75000 (5) into 0xc1e75000 and 0xc1e85000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (4) into 0xc1e85000 and 0xc1e8d000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e8d000 (3) into 0xc1e8d000 and 0xc1e91000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e91000 (2) into 0xc1e91000 and 0xc1e93000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e93000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50fc from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 4
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e75000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3780 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 5
+[0mInitialize pid, 7
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e91000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 5
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (5) into 0xc1e55000 and 0xc1e65000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e65000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3960 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 6
+[0mInitialize pid, 8
+[37;40mmm/page.c:174 __page_split(): split 0xc1e8d000 (2) into 0xc1e8d000 and 0xc1e8f000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e8f000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec51a4 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 6
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e55000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3b40 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 7
+[0mInitialize pid, 9
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e8d000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 7
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (7) into 0xc1dd5000 and 0xc1e15000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (6) into 0xc1e15000 and 0xc1e35000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e35000 (5) into 0xc1e35000 and 0xc1e45000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e45000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3d20 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 8
+[0mInitialize pid, 10
+[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (3) into 0xc1e85000 and 0xc1e89000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e89000 (2) into 0xc1e89000 and 0xc1e8b000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e8b000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec524c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 8
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e35000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3f00 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 9
+[0mInitialize pid, 11
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e89000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 9
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (5) into 0xc1e15000 and 0xc1e25000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e25000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee40e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 10
+[0mInitialize pid, 12
+[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (2) into 0xc1e85000 and 0xc1e87000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e87000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec52f4 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 10
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e15000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 11
+[0mInitialize pid, 13
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e85000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 11
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (6) into 0xc1dd5000 and 0xc1df5000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1df5000 (5) into 0xc1df5000 and 0xc1e05000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e05000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 12
+[0mInitialize pid, 14
+[37;40mmm/page.c:174 __page_split(): split 0xc1df5000 (4) into 0xc1df5000 and 0xc1dfd000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dfd000 (3) into 0xc1dfd000 and 0xc1e01000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e01000 (2) into 0xc1e01000 and 0xc1e03000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e03000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 12
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (5) into 0xc1dd5000 and 0xc1de5000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1de5000)
+[0mFound proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7598 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 11
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7600 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 11
+[0mchild (5) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e75000); 7616 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50fc from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 10
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e93000); 7618 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee35a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 10
+[0mchild (6) exited: 1
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e65000); 7634 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 9
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e91000 and 0xc1e93000 (1) into 0x01e3c000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e91000); 7636 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3780 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 9
+[0mchild (7) exited: 2
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e55000 and 0xc1e65000 (4) into 0x01e00000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e55000); 7652 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec51a4 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 8
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e8f000); 7654 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3960 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 8
+[0mchild (8) exited: 3
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e45000); 7670 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 7
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8d000 and 0xc1e8f000 (1) into 0x01e38000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8d000 and 0xc1e91000 (2) into 0x01e38000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e8d000); 7672 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3b40 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 7
+[0mchild (9) exited: 4
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e35000 and 0xc1e45000 (4) into 0x01de0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e35000); 7688 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec524c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 6
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e8b000); 7690 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3d20 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 6
+[0mchild (10) exited: 5
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e25000); 7706 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 5
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e89000 and 0xc1e8b000 (1) into 0x01e34000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e89000); 7708 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3f00 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 5
+[0mchild (11) exited: 6
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e15000 and 0xc1e25000 (4) into 0x01dc0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e15000 and 0xc1e35000 (5) into 0x01dc0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e15000); 7724 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec52f4 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 4
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e87000); 7726 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee40e0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 4
+[0mchild (12) exited: 7
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e05000); 7742 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 3
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e87000 (1) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e89000 (2) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e8d000 (3) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e75000 (4) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e75000 and 0xc1e55000 (5) into 0x01e20000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e85000); 7744 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 3
+[0mchild (13) exited: 8
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1de5000 and 0xc1dd5000 (4) into 0x01d90000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1de5000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e03000 and 0xc1e01000 (1) into 0x01dae000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e01000 and 0xc1dfd000 (2) into 0x01dac000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dfd000 and 0xc1df5000 (3) into 0x01da8000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1df5000 and 0xc1e05000 (4) into 0x01da0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1df5000 and 0xc1dd5000 (5) into 0x01da0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dd5000 and 0xc1e15000 (6) into 0x01d80000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e03000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mchild (14) exited: 9
+Context switch test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 15
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0mFound proc to clean up after, pid > 0
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mContext switch (15) exited: 1
+wake me test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 16
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0mFound proc to clean up after, pid > 0
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mwake me test (16) exited: 0
+broadcast me test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 17
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 4
+[0mInitialize pid, 18
+[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (6) into 0xc1e55000 and 0xc1e75000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e75000 (5) into 0xc1e75000 and 0xc1e85000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (4) into 0xc1e85000 and 0xc1e8d000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e8d000 (3) into 0xc1e8d000 and 0xc1e91000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e91000 (2) into 0xc1e91000 and 0xc1e93000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e93000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 4
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e75000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee40e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 5
+[0mInitialize pid, 19
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e91000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec52f4 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 5
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (5) into 0xc1e55000 and 0xc1e65000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e65000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3f00 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 6
+[0mInitialize pid, 20
+[37;40mmm/page.c:174 __page_split(): split 0xc1e8d000 (2) into 0xc1e8d000 and 0xc1e8f000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e8f000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 6
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e55000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3d20 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 7
+[0mInitialize pid, 21
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e8d000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec524c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 7
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (7) into 0xc1dd5000 and 0xc1e15000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (6) into 0xc1e15000 and 0xc1e35000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e35000 (5) into 0xc1e35000 and 0xc1e45000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e45000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3b40 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 8
+[0mInitialize pid, 22
+[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (3) into 0xc1e85000 and 0xc1e89000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e89000 (2) into 0xc1e89000 and 0xc1e8b000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e8b000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 8
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e35000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3960 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 9
+[0mInitialize pid, 23
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e89000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec51a4 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 9
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (5) into 0xc1e15000 and 0xc1e25000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e25000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3780 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 10
+[0mInitialize pid, 24
+[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (2) into 0xc1e85000 and 0xc1e87000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e87000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 10
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e15000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee35a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 11
+[0mInitialize pid, 25
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e85000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50fc from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 11
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (6) into 0xc1dd5000 and 0xc1df5000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1df5000 (5) into 0xc1df5000 and 0xc1e05000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e05000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 12
+[0mInitialize pid, 26
+[37;40mmm/page.c:174 __page_split(): split 0xc1df5000 (4) into 0xc1df5000 and 0xc1dfd000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dfd000 (3) into 0xc1dfd000 and 0xc1e01000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e01000 (2) into 0xc1e01000 and 0xc1e03000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e03000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 12
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (5) into 0xc1dd5000 and 0xc1de5000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1de5000)
+[0mFound proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7598 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 11
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7600 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 11
+[0mchild (17) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e75000); 7616 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 10
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e93000); 7618 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 10
+[0mchild (18) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e65000); 7634 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec52f4 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 9
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e91000 and 0xc1e93000 (1) into 0x01e3c000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e91000); 7636 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee40e0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 9
+[0mchild (19) exited: 0
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e55000 and 0xc1e65000 (4) into 0x01e00000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e55000); 7652 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 8
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e8f000); 7654 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3f00 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 8
+[0mchild (20) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e45000); 7670 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec524c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 7
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8d000 and 0xc1e8f000 (1) into 0x01e38000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8d000 and 0xc1e91000 (2) into 0x01e38000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e8d000); 7672 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3d20 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 7
+[0mchild (21) exited: 0
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e35000 and 0xc1e45000 (4) into 0x01de0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e35000); 7688 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 6
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e8b000); 7690 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3b40 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 6
+[0mchild (22) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e25000); 7706 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec51a4 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 5
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e89000 and 0xc1e8b000 (1) into 0x01e34000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e89000); 7708 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3960 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 5
+[0mchild (23) exited: 0
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e15000 and 0xc1e25000 (4) into 0x01dc0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e15000 and 0xc1e35000 (5) into 0x01dc0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e15000); 7724 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 4
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e87000); 7726 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3780 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 4
+[0mchild (24) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e05000); 7742 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50fc from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 3
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e87000 (1) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e89000 (2) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e8d000 (3) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e75000 (4) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e75000 and 0xc1e55000 (5) into 0x01e20000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e85000); 7744 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee35a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 3
+[0mchild (25) exited: 0
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1de5000 and 0xc1dd5000 (4) into 0x01d90000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1de5000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e03000 and 0xc1e01000 (1) into 0x01dae000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e01000 and 0xc1dfd000 (2) into 0x01dac000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dfd000 and 0xc1df5000 (3) into 0x01da8000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1df5000 and 0xc1e05000 (4) into 0x01da0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1df5000 and 0xc1dd5000 (5) into 0x01da0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dd5000 and 0xc1e15000 (6) into 0x01d80000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e03000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mchild (26) exited: 0
+wake me uncancellable test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 27
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0mFound proc to clean up after, pid > 0
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mwake me uncancellable test (27) exited: 0
+broadcast me uncancellable test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 28
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee35a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 4
+[0mInitialize pid, 29
+[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (6) into 0xc1e55000 and 0xc1e75000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e75000 (5) into 0xc1e75000 and 0xc1e85000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (4) into 0xc1e85000 and 0xc1e8d000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e8d000 (3) into 0xc1e8d000 and 0xc1e91000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e91000 (2) into 0xc1e91000 and 0xc1e93000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e93000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50fc from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 4
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e75000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3780 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 5
+[0mInitialize pid, 30
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e91000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 5
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (5) into 0xc1e55000 and 0xc1e65000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e65000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3960 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 6
+[0mInitialize pid, 31
+[37;40mmm/page.c:174 __page_split(): split 0xc1e8d000 (2) into 0xc1e8d000 and 0xc1e8f000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e8f000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec51a4 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 6
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e55000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3b40 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 7
+[0mInitialize pid, 32
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e8d000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 7
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (7) into 0xc1dd5000 and 0xc1e15000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (6) into 0xc1e15000 and 0xc1e35000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e35000 (5) into 0xc1e35000 and 0xc1e45000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e45000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3d20 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 8
+[0mInitialize pid, 33
+[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (3) into 0xc1e85000 and 0xc1e89000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e89000 (2) into 0xc1e89000 and 0xc1e8b000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e8b000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec524c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 8
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e35000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3f00 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 9
+[0mInitialize pid, 34
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e89000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 9
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (5) into 0xc1e15000 and 0xc1e25000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e25000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee40e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 10
+[0mInitialize pid, 35
+[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (2) into 0xc1e85000 and 0xc1e87000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e87000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec52f4 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 10
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e15000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 11
+[0mInitialize pid, 36
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e85000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 11
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (6) into 0xc1dd5000 and 0xc1df5000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1df5000 (5) into 0xc1df5000 and 0xc1e05000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e05000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 12
+[0mInitialize pid, 37
+[37;40mmm/page.c:174 __page_split(): split 0xc1df5000 (4) into 0xc1df5000 and 0xc1dfd000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dfd000 (3) into 0xc1dfd000 and 0xc1e01000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e01000 (2) into 0xc1e01000 and 0xc1e03000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e03000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 12
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (5) into 0xc1dd5000 and 0xc1de5000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1de5000)
+[0mFound proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7598 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 11
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7600 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 11
+[0mchild (28) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e75000); 7616 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50fc from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 10
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e93000); 7618 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee35a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 10
+[0mchild (29) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e65000); 7634 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 9
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e91000 and 0xc1e93000 (1) into 0x01e3c000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e91000); 7636 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3780 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 9
+[0mchild (30) exited: 0
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e55000 and 0xc1e65000 (4) into 0x01e00000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e55000); 7652 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec51a4 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 8
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e8f000); 7654 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3960 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 8
+[0mchild (31) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e45000); 7670 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 7
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8d000 and 0xc1e8f000 (1) into 0x01e38000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8d000 and 0xc1e91000 (2) into 0x01e38000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e8d000); 7672 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3b40 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 7
+[0mchild (32) exited: 0
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e35000 and 0xc1e45000 (4) into 0x01de0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e35000); 7688 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec524c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 6
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e8b000); 7690 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3d20 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 6
+[0mchild (33) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e25000); 7706 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 5
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e89000 and 0xc1e8b000 (1) into 0x01e34000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e89000); 7708 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3f00 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 5
+[0mchild (34) exited: 0
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e15000 and 0xc1e25000 (4) into 0x01dc0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e15000 and 0xc1e35000 (5) into 0x01dc0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e15000); 7724 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec52f4 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 4
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e87000); 7726 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee40e0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 4
+[0mchild (35) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e05000); 7742 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 3
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e87000 (1) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e89000 (2) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e8d000 (3) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e75000 (4) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e75000 and 0xc1e55000 (5) into 0x01e20000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e85000); 7744 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 3
+[0mchild (36) exited: 0
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1de5000 and 0xc1dd5000 (4) into 0x01d90000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1de5000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e03000 and 0xc1e01000 (1) into 0x01dae000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e01000 and 0xc1dfd000 (2) into 0x01dac000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dfd000 and 0xc1df5000 (3) into 0x01da8000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1df5000 and 0xc1e05000 (4) into 0x01da0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1df5000 and 0xc1dd5000 (5) into 0x01da0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dd5000 and 0xc1e15000 (6) into 0x01d80000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e03000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mchild (37) exited: 0
+cancel me test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 38
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0mFound proc to clean up after, pid > 0
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mcancel me test (38) exited: 0
+prior cancel me test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 39
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0mFound proc to clean up after, pid > 0
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mprior cancel me test (39) exited: 0
+cancel me head test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 40
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 4
+[0mInitialize pid, 41
+[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (6) into 0xc1e55000 and 0xc1e75000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e75000 (5) into 0xc1e75000 and 0xc1e85000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (4) into 0xc1e85000 and 0xc1e8d000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e8d000 (3) into 0xc1e8d000 and 0xc1e91000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e91000 (2) into 0xc1e91000 and 0xc1e93000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e93000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 4
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e75000)
+[0mFound proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7742 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 3
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7744 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 3
+[0mchild (40) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e75000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e93000 and 0xc1e91000 (1) into 0x01e3e000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e91000 and 0xc1e8d000 (2) into 0x01e3c000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8d000 and 0xc1e85000 (3) into 0x01e38000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e75000 (4) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e75000 and 0xc1e55000 (5) into 0x01e20000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e93000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mchild (41) exited: 0
+cancel me tail test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 42
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 4
+[0mInitialize pid, 43
+[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (6) into 0xc1e55000 and 0xc1e75000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e75000 (5) into 0xc1e75000 and 0xc1e85000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (4) into 0xc1e85000 and 0xc1e8d000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e8d000 (3) into 0xc1e8d000 and 0xc1e91000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e91000 (2) into 0xc1e91000 and 0xc1e93000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e93000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 4
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e75000)
+[0mFound proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7742 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 3
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7744 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 3
+[0mchild (42) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e75000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e93000 and 0xc1e91000 (1) into 0x01e3e000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e91000 and 0xc1e8d000 (2) into 0x01e3c000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8d000 and 0xc1e85000 (3) into 0x01e38000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e75000 (4) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e75000 and 0xc1e55000 (5) into 0x01e20000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e93000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mchild (43) exited: 0
+Reparenting test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 44
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 4
+[0mInitialize pid, 45
+[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (6) into 0xc1e55000 and 0xc1e75000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e75000 (5) into 0xc1e75000 and 0xc1e85000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (4) into 0xc1e85000 and 0xc1e8d000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e8d000 (3) into 0xc1e8d000 and 0xc1e91000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e91000 (2) into 0xc1e91000 and 0xc1e93000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e93000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 4
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e75000)
+[0mFound proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7742 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 3
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7744 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 3
+[0mchild (44) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e75000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e93000 and 0xc1e91000 (1) into 0x01e3e000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e91000 and 0xc1e8d000 (2) into 0x01e3c000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8d000 and 0xc1e85000 (3) into 0x01e38000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e75000 (4) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e75000 and 0xc1e55000 (5) into 0x01e20000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e93000); 7762 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mchild (45) exited: 0
+Reparenting stress test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 46
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 4
+[0mInitialize pid, 47
+[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (6) into 0xc1e55000 and 0xc1e75000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e75000 (5) into 0xc1e75000 and 0xc1e85000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (4) into 0xc1e85000 and 0xc1e8d000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e8d000 (3) into 0xc1e8d000 and 0xc1e91000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e91000 (2) into 0xc1e91000 and 0xc1e93000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e93000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 4
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e75000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee40e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 5
+[0mInitialize pid, 48
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e91000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec52f4 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 5
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (5) into 0xc1e55000 and 0xc1e65000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e65000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3f00 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 6
+[0mInitialize pid, 49
+[37;40mmm/page.c:174 __page_split(): split 0xc1e8d000 (2) into 0xc1e8d000 and 0xc1e8f000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e8f000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 6
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e55000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3d20 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 7
+[0mInitialize pid, 50
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e8d000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec524c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 7
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (7) into 0xc1dd5000 and 0xc1e15000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (6) into 0xc1e15000 and 0xc1e35000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e35000 (5) into 0xc1e35000 and 0xc1e45000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e45000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3b40 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 8
+[0mInitialize pid, 51
+[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (3) into 0xc1e85000 and 0xc1e89000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e89000 (2) into 0xc1e89000 and 0xc1e8b000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e8b000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 8
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e35000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3960 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 9
+[0mInitialize pid, 52
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e89000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec51a4 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 9
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (5) into 0xc1e15000 and 0xc1e25000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e25000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee3780 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 10
+[0mInitialize pid, 53
+[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (2) into 0xc1e85000 and 0xc1e87000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e87000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 10
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e15000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee35a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 11
+[0mInitialize pid, 54
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e85000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50fc from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 11
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (6) into 0xc1dd5000 and 0xc1df5000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1df5000 (5) into 0xc1df5000 and 0xc1e05000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e05000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 12
+[0mInitialize pid, 55
+[37;40mmm/page.c:174 __page_split(): split 0xc1df5000 (4) into 0xc1df5000 and 0xc1dfd000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dfd000 (3) into 0xc1dfd000 and 0xc1e01000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e01000 (2) into 0xc1e01000 and 0xc1e03000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e03000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 12
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (5) into 0xc1dd5000 and 0xc1de5000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1de5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee4680 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 13
+[0mInitialize pid, 56
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e01000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec53f0 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 13
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1dd5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee4860 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 14
+[0mInitialize pid, 57
+[37;40mmm/page.c:174 __page_split(): split 0xc1dfd000 (2) into 0xc1dfd000 and 0xc1dff000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dff000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5444 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 14
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1d55000 (7) into 0xc1d55000 and 0xc1d95000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1d95000 (6) into 0xc1d95000 and 0xc1db5000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1db5000 (5) into 0xc1db5000 and 0xc1dc5000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1dc5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee4a40 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 15
+[0mInitialize pid, 58
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dfd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5498 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 15
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1db5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee4c20 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 16
+[0mInitialize pid, 59
+[37;40mmm/page.c:174 __page_split(): split 0xc1df5000 (3) into 0xc1df5000 and 0xc1df9000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1df9000 (2) into 0xc1df9000 and 0xc1dfb000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dfb000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec54ec from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 16
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1d95000 (5) into 0xc1d95000 and 0xc1da5000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1da5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ee4e00 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 17
+[0mInitialize pid, 60
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1df9000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5540 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 17
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1d95000)
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1df5000 (2) into 0xc1df5000 and 0xc1df7000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1df7000)
+[0m[31;40mmm/slab.c:253 _slab_allocator_grow(): Growing cache "proc" (0xc1efb284), new slab 0xc1df8fe0 (2 pages)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7000 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 1
+[0mInitialize pid, 61
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1df5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5594 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 18
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1d55000 (6) into 0xc1d55000 and 0xc1d75000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1d75000 (5) into 0xc1d75000 and 0xc1d85000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1d85000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df71e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 2
+[0mInitialize pid, 62
+[37;40mmm/page.c:174 __page_split(): split 0xc1d75000 (4) into 0xc1d75000 and 0xc1d7d000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1d7d000 (3) into 0xc1d7d000 and 0xc1d81000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1d81000 (2) into 0xc1d81000 and 0xc1d83000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1d83000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec55e8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 19
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1d55000 (5) into 0xc1d55000 and 0xc1d65000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1d65000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df73c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 63
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1d81000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec563c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 20
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1d55000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df75a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 4
+[0mInitialize pid, 64
+[37;40mmm/page.c:174 __page_split(): split 0xc1d7d000 (2) into 0xc1d7d000 and 0xc1d7f000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1d7f000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5690 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 21
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1cd5000 (7) into 0xc1cd5000 and 0xc1d15000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1d15000 (6) into 0xc1d15000 and 0xc1d35000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1d35000 (5) into 0xc1d35000 and 0xc1d45000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1d45000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7780 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 5
+[0mInitialize pid, 65
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1d7d000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec56e4 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 22
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1d35000)
+[0mFound proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7416 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5348 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 21
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7418 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee42c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 16
+[0mchild (46) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e65000); 7434 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec52f4 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 20
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e91000); 7436 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee40e0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 15
+[0mchild (48) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e45000); 7452 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec524c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 19
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e8d000); 7454 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3d20 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 14
+[0mchild (50) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e25000); 7470 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec51a4 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 18
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e89000); 7472 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3960 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 13
+[0mchild (52) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e05000); 7488 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50fc from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 17
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e85000); 7490 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee35a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 12
+[0mchild (54) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1dd5000); 7506 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec53f0 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 16
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e01000); 7508 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee4680 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 11
+[0mchild (56) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1db5000); 7524 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5498 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 15
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dfd000); 7526 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee4a40 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 10
+[0mchild (58) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1d95000); 7542 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5540 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 14
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1df9000); 7544 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee4e00 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 9
+[0mchild (60) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1d65000); 7560 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec55e8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 13
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1d83000); 7562 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df71e0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 4
+[0mchild (62) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1d45000); 7578 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5690 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 12
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1d7f000); 7580 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df75a0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 3
+[0mchild (64) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e75000); 7596 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 11
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e93000 and 0xc1e91000 (1) into 0x01e3e000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e93000); 7598 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee44a0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 8
+[0mchild (47) exited: 10
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e55000 and 0xc1e65000 (4) into 0x01e00000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e55000); 7614 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 10
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8f000 and 0xc1e8d000 (1) into 0x01e3a000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8d000 and 0xc1e91000 (2) into 0x01e38000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e8f000); 7616 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3f00 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 7
+[0mchild (49) exited: 9
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e35000 and 0xc1e45000 (4) into 0x01de0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e35000); 7632 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 9
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8b000 and 0xc1e89000 (1) into 0x01e36000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e8b000); 7634 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3b40 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 6
+[0mchild (51) exited: 8
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e15000 and 0xc1e25000 (4) into 0x01dc0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e15000 and 0xc1e35000 (5) into 0x01dc0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e15000); 7650 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 8
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e87000 and 0xc1e85000 (1) into 0x01e32000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e89000 (2) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e8d000 (3) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e75000 (4) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e75000 and 0xc1e55000 (5) into 0x01e20000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e87000); 7652 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee3780 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 5
+[0mchild (53) exited: 7
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1de5000 and 0xc1dd5000 (4) into 0x01d90000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1de5000); 7668 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 7
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e03000 and 0xc1e01000 (1) into 0x01dae000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e03000); 7670 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee33c0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 4
+[0mchild (55) exited: 6
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1dc5000 and 0xc1db5000 (4) into 0x01d70000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1dc5000); 7686 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5444 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 6
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dff000 and 0xc1dfd000 (1) into 0x01daa000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dfd000 and 0xc1e01000 (2) into 0x01da8000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dff000); 7688 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee4860 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 3
+[0mchild (57) exited: 5
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1da5000 and 0xc1d95000 (4) into 0x01d50000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1d95000 and 0xc1db5000 (5) into 0x01d40000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1da5000); 7704 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec54ec from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 5
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dfb000 and 0xc1df9000 (1) into 0x01da6000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dfb000); 7706 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee4c20 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 2
+[0mchild (59) exited: 4
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1d85000); 7722 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5594 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 4
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1df5000); 7724 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7000 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 2
+[0mchild (61) exited: 3
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1d55000 and 0xc1d65000 (4) into 0x01d00000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1d55000); 7740 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec563c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 3
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1d81000 and 0xc1d83000 (1) into 0x01d2c000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1d81000); 7742 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df73c0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 1
+[0mchild (63) exited: 2
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1d35000 and 0xc1d45000 (4) into 0x01ce0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1d35000 and 0xc1d15000 (5) into 0x01ce0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1d15000 and 0xc1cd5000 (6) into 0x01cc0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1d35000); 7758 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec56e4 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1d7d000 and 0xc1d7f000 (1) into 0x01d28000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1d7d000 and 0xc1d81000 (2) into 0x01d28000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1d7d000 and 0xc1d75000 (3) into 0x01d28000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1d75000 and 0xc1d85000 (4) into 0x01d20000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1d75000 and 0xc1d55000 (5) into 0x01d20000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1d55000 and 0xc1d95000 (6) into 0x01d00000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1d7d000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7780 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 0
+[0mchild (65) exited: 1
+show race test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7780 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 1
+[0mInitialize pid, 66
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1df5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec56e4 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e05000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df73c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 2
+[0mInitialize pid, 67
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec563c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 4
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7000 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 68
+[37;40mmm/page.c:174 __page_split(): split 0xc1df9000 (2) into 0xc1df9000 and 0xc1dfb000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dfb000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5594 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 5
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (5) into 0xc1dd5000 and 0xc1de5000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1de5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df75a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 4
+[0mInitialize pid, 69
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1df9000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec54ec from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 6
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1dd5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df71e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 5
+[0mInitialize pid, 70
+[37;40mmm/page.c:174 __page_split(): split 0xc1dfd000 (3) into 0xc1dfd000 and 0xc1e01000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e01000 (2) into 0xc1e01000 and 0xc1e03000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e03000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5444 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 7
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (6) into 0xc1e55000 and 0xc1e75000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e75000 (5) into 0xc1e75000 and 0xc1e85000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e85000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7960 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 6
+[0mInitialize pid, 71
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e01000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 8
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e75000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7b40 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 7
+[0mInitialize pid, 72
+[37;40mmm/page.c:174 __page_split(): split 0xc1dfd000 (2) into 0xc1dfd000 and 0xc1dff000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dff000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 9
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (5) into 0xc1e55000 and 0xc1e65000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e65000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7d20 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 8
+[0mInitialize pid, 73
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dfd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 10
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e55000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7f00 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 9
+[0mInitialize pid, 74
+[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (6) into 0xc1e15000 and 0xc1e35000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e35000 (5) into 0xc1e35000 and 0xc1e45000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e45000 (4) into 0xc1e45000 and 0xc1e4d000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e4d000 (3) into 0xc1e4d000 and 0xc1e51000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e51000 (2) into 0xc1e51000 and 0xc1e53000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e53000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 11
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e35000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df80e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 10
+[0mInitialize pid, 75
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e51000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 12
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (5) into 0xc1e15000 and 0xc1e25000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e25000)
+[0mFound proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e05000); 7596 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec56e4 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 11
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1df5000); 7598 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7780 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 9
+[0mchild (66) exited: 1
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7614 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec563c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 10
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7616 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df73c0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 8
+[0mchild (67) exited: 1
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1de5000); 7632 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5594 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 9
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dfb000); 7634 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7000 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 7
+[0mchild (68) exited: 1
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1dd5000 and 0xc1de5000 (4) into 0x01d80000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1dd5000); 7650 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec54ec from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 8
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1df9000 and 0xc1dfb000 (1) into 0x01da4000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1df9000); 7652 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df75a0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 6
+[0mchild (69) exited: 1
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e85000); 7668 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5444 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 7
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e03000); 7670 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df71e0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 5
+[0mchild (70) exited: 1
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e75000 and 0xc1e85000 (4) into 0x01e20000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e75000); 7686 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 6
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e01000 and 0xc1e03000 (1) into 0x01dac000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e01000); 7688 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7960 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 4
+[0mchild (71) exited: 1
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e65000); 7704 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 5
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dff000); 7706 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7b40 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 3
+[0mchild (72) exited: 1
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e55000 and 0xc1e65000 (4) into 0x01e00000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e55000 and 0xc1e75000 (5) into 0x01e00000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e55000); 7722 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 4
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dfd000 and 0xc1dff000 (1) into 0x01da8000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dfd000 and 0xc1e01000 (2) into 0x01da8000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dfd000); 7724 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7d20 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 2
+[0mchild (73) exited: 1
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e35000); 7740 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 3
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e53000); 7742 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7f00 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 1
+[0mchild (74) exited: 1
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e25000 and 0xc1e15000 (4) into 0x01dd0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e25000); 7758 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e51000 and 0xc1e53000 (1) into 0x01dfc000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e51000 and 0xc1e4d000 (2) into 0x01dfc000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e4d000 and 0xc1e45000 (3) into 0x01df8000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e45000 and 0xc1e35000 (4) into 0x01df0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e35000 and 0xc1e15000 (5) into 0x01de0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e51000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df80e0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 0
+[0mchild (75) exited: 1
+fix race test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df80e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 1
+[0mInitialize pid, 76
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7f00 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 2
+[0mInitialize pid, 77
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1df5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 4
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e05000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7d20 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 78
+[37;40mmm/page.c:174 __page_split(): split 0xc1df9000 (2) into 0xc1df9000 and 0xc1dfb000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dfb000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 5
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (5) into 0xc1dd5000 and 0xc1de5000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1de5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7b40 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 4
+[0mInitialize pid, 79
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1df9000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 6
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1dd5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7960 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 5
+[0mInitialize pid, 80
+[37;40mmm/page.c:174 __page_split(): split 0xc1dfd000 (3) into 0xc1dfd000 and 0xc1e01000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e01000 (2) into 0xc1e01000 and 0xc1e03000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e03000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 7
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (6) into 0xc1e15000 and 0xc1e35000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e35000 (5) into 0xc1e35000 and 0xc1e45000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e45000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df71e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 6
+[0mInitialize pid, 81
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e01000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5444 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 8
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e35000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df75a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 7
+[0mInitialize pid, 82
+[37;40mmm/page.c:174 __page_split(): split 0xc1dfd000 (2) into 0xc1dfd000 and 0xc1dff000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dff000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec54ec from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 9
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (5) into 0xc1e15000 and 0xc1e25000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e25000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7000 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 8
+[0mInitialize pid, 83
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dfd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5594 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 10
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e15000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df73c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 9
+[0mInitialize pid, 84
+[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (6) into 0xc1e55000 and 0xc1e75000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e75000 (5) into 0xc1e75000 and 0xc1e85000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (4) into 0xc1e85000 and 0xc1e8d000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e8d000 (3) into 0xc1e8d000 and 0xc1e91000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e91000 (2) into 0xc1e91000 and 0xc1e93000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e93000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec563c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 11
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e75000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7780 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 10
+[0mInitialize pid, 85
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e91000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec56e4 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 12
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (5) into 0xc1e55000 and 0xc1e65000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e65000)
+[0mFound proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7596 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 11
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7598 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df80e0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 9
+[0mchild (76) exited: 1
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e05000); 7614 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 10
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1df5000); 7616 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7f00 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 8
+[0mchild (77) exited: 2
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1de5000); 7632 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 9
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dfb000); 7634 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7d20 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 7
+[0mchild (78) exited: 3
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1dd5000 and 0xc1de5000 (4) into 0x01d80000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1dd5000); 7650 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 8
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1df9000 and 0xc1dfb000 (1) into 0x01da4000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1df9000); 7652 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7b40 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 6
+[0mchild (79) exited: 4
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e45000); 7668 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 7
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e03000); 7670 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7960 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 5
+[0mchild (80) exited: 5
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e35000 and 0xc1e45000 (4) into 0x01de0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e35000); 7686 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5444 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 6
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e01000 and 0xc1e03000 (1) into 0x01dac000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e01000); 7688 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df71e0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 4
+[0mchild (81) exited: 6
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e25000); 7704 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec54ec from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 5
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dff000); 7706 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df75a0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 3
+[0mchild (82) exited: 7
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e15000 and 0xc1e25000 (4) into 0x01dc0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e15000 and 0xc1e35000 (5) into 0x01dc0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e15000); 7722 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5594 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 4
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dfd000 and 0xc1dff000 (1) into 0x01da8000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dfd000 and 0xc1e01000 (2) into 0x01da8000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dfd000); 7724 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7000 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 2
+[0mchild (83) exited: 8
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e75000); 7740 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec563c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 3
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e93000); 7742 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df73c0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 1
+[0mchild (84) exited: 9
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e65000 and 0xc1e55000 (4) into 0x01e10000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e65000); 7758 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec56e4 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e91000 and 0xc1e93000 (1) into 0x01e3c000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e91000 and 0xc1e8d000 (2) into 0x01e3c000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8d000 and 0xc1e85000 (3) into 0x01e38000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e75000 (4) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e75000 and 0xc1e55000 (5) into 0x01e20000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e91000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7780 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 0
+[0mchild (85) exited: 10
+fix race test w/cancel[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7780 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 1
+[0mInitialize pid, 86
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1df5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec56e4 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e05000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df73c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 2
+[0mInitialize pid, 87
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec563c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 4
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7000 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 88
+[37;40mmm/page.c:174 __page_split(): split 0xc1df9000 (2) into 0xc1df9000 and 0xc1dfb000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dfb000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5594 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 5
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (5) into 0xc1dd5000 and 0xc1de5000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1de5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df75a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 4
+[0mInitialize pid, 89
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1df9000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec54ec from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 6
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1dd5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df71e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 5
+[0mInitialize pid, 90
+[37;40mmm/page.c:174 __page_split(): split 0xc1dfd000 (3) into 0xc1dfd000 and 0xc1e01000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e01000 (2) into 0xc1e01000 and 0xc1e03000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e03000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5444 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 7
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (6) into 0xc1e55000 and 0xc1e75000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e75000 (5) into 0xc1e75000 and 0xc1e85000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e85000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7960 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 6
+[0mInitialize pid, 91
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e01000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 8
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e75000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7b40 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 7
+[0mInitialize pid, 92
+[37;40mmm/page.c:174 __page_split(): split 0xc1dfd000 (2) into 0xc1dfd000 and 0xc1dff000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dff000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 9
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (5) into 0xc1e55000 and 0xc1e65000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e65000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7d20 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 8
+[0mInitialize pid, 93
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dfd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 10
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e55000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7f00 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 9
+[0mInitialize pid, 94
+[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (6) into 0xc1e15000 and 0xc1e35000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e35000 (5) into 0xc1e35000 and 0xc1e45000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e45000 (4) into 0xc1e45000 and 0xc1e4d000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e4d000 (3) into 0xc1e4d000 and 0xc1e51000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e51000 (2) into 0xc1e51000 and 0xc1e53000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e53000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 11
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e35000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df80e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 10
+[0mInitialize pid, 95
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e51000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 12
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (5) into 0xc1e15000 and 0xc1e25000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e25000)
+[0mFound proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7596 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec563c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 11
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7598 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df73c0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 9
+[0mchild (87) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1dd5000); 7614 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec54ec from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 10
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1df9000); 7616 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df75a0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 8
+[0mchild (89) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e75000); 7632 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 9
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e01000); 7634 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7960 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 7
+[0mchild (91) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e55000); 7650 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 8
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dfd000); 7652 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7d20 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 6
+[0mchild (93) exited: 0
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e25000 and 0xc1e15000 (4) into 0x01dd0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e25000); 7668 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 7
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e51000); 7670 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df80e0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 5
+[0mchild (95) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e05000); 7686 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec56e4 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 6
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1df5000); 7688 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7780 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 4
+[0mchild (86) exited: 1
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1de5000 and 0xc1dd5000 (4) into 0x01d90000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1de5000); 7704 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5594 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 5
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dfb000 and 0xc1df9000 (1) into 0x01da6000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dfb000); 7706 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7000 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 3
+[0mchild (88) exited: 2
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e75000 (4) into 0x01e30000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e85000); 7722 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5444 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 4
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e03000 and 0xc1e01000 (1) into 0x01dae000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e03000); 7724 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df71e0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 2
+[0mchild (90) exited: 3
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e65000 and 0xc1e55000 (4) into 0x01e10000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e55000 and 0xc1e75000 (5) into 0x01e00000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e65000); 7740 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 3
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dff000 and 0xc1dfd000 (1) into 0x01daa000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dfd000 and 0xc1e01000 (2) into 0x01da8000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dff000); 7742 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7b40 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 1
+[0mchild (92) exited: 4
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e35000); 7758 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e53000 and 0xc1e51000 (1) into 0x01dfe000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e51000 and 0xc1e4d000 (2) into 0x01dfc000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e4d000 and 0xc1e45000 (3) into 0x01df8000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e45000 and 0xc1e35000 (4) into 0x01df0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e35000 and 0xc1e15000 (5) into 0x01de0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e53000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7f00 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 0
+[0mchild (94) exited: 5
+kill all test[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7f00 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 1
+[0mInitialize pid, 96
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1df5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 3
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e05000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7b40 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 2
+[0mInitialize pid, 97
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1edd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 4
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e95000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df71e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 3
+[0mInitialize pid, 98
+[37;40mmm/page.c:174 __page_split(): split 0xc1df9000 (2) into 0xc1df9000 and 0xc1dfb000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dfb000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5444 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 5
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1dd5000 (5) into 0xc1dd5000 and 0xc1de5000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1de5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7000 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 4
+[0mInitialize pid, 99
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1df9000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec5594 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 6
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1dd5000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7780 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 5
+[0mInitialize pid, 100
+[37;40mmm/page.c:174 __page_split(): split 0xc1dfd000 (3) into 0xc1dfd000 and 0xc1e01000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e01000 (2) into 0xc1e01000 and 0xc1e03000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e03000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec56e4 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 7
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (6) into 0xc1e15000 and 0xc1e35000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e35000 (5) into 0xc1e35000 and 0xc1e45000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e45000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df80e0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 6
+[0mInitialize pid, 101
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e01000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 8
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e35000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7d20 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 7
+[0mInitialize pid, 102
+[37;40mmm/page.c:174 __page_split(): split 0xc1dfd000 (2) into 0xc1dfd000 and 0xc1dff000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dff000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 9
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e15000 (5) into 0xc1e15000 and 0xc1e25000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e25000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df7960 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 8
+[0mInitialize pid, 103
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1dfd000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 10
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e15000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df75a0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 9
+[0mInitialize pid, 104
+[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (6) into 0xc1e55000 and 0xc1e75000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e75000 (5) into 0xc1e75000 and 0xc1e85000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e85000 (4) into 0xc1e85000 and 0xc1e8d000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e8d000 (3) into 0xc1e8d000 and 0xc1e91000
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e91000 (2) into 0xc1e91000 and 0xc1e93000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e93000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec54ec from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 11
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e75000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1df73c0 from "proc" (0xc1efb284), slab 0xc1efb284, inuse 10
+[0mInitialize pid, 105
+[31;40mmm/page.c:258 _page_alloc_order(): allocating 2 pages (addr 0xc1e91000)
+[0m[31;40mmm/slab.c:295 slab_obj_alloc(): Allocated object 0xc1ec563c from "kthread" (0xc1efb2ac), slab 0xc1efb2ac, inuse 12
+[0m[37;40mmm/page.c:174 __page_split(): split 0xc1e55000 (5) into 0xc1e55000 and 0xc1e65000
+[0m[31;40mmm/page.c:258 _page_alloc_order(): allocating 16 pages (addr 0xc1e65000)
+[0mCancelling sleep on process 96
+Cancelling sleep on process 97
+Cancelling sleep on process 98
+Cancelling sleep on process 99
+Cancelling sleep on process 100
+Cancelling sleep on process 101
+Cancelling sleep on process 102
+Cancelling sleep on process 103
+Cancelling sleep on process 104
+Cancelling sleep on process 105
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e05000); 7596 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec52a0 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 11
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1df5000); 7598 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7f00 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 9
+[0mchild (96) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e95000); 7614 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5150 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 10
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edd000); 7616 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7b40 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 8
+[0mchild (97) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1de5000); 7632 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5444 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 9
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dfb000); 7634 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df71e0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 7
+[0mchild (98) exited: 0
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1dd5000 and 0xc1de5000 (4) into 0x01d80000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1dd5000); 7650 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5594 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 8
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1df9000 and 0xc1dfb000 (1) into 0x01da4000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1df9000); 7652 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7000 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 6
+[0mchild (99) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e45000); 7668 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec56e4 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 7
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e03000); 7670 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7780 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 5
+[0mchild (100) exited: 0
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e35000 and 0xc1e45000 (4) into 0x01de0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e35000); 7686 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec539c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 6
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e01000 and 0xc1e03000 (1) into 0x01dac000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e01000); 7688 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df80e0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 4
+[0mchild (101) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e25000); 7704 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec51f8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 5
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dff000); 7706 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7d20 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 3
+[0mchild (102) exited: 0
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e15000 and 0xc1e25000 (4) into 0x01dc0000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e15000 and 0xc1e35000 (5) into 0x01dc0000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e15000); 7722 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec50a8 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 4
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dfd000 and 0xc1dff000 (1) into 0x01da8000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1dfd000 and 0xc1e01000 (2) into 0x01da8000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1dfd000); 7724 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df7960 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 2
+[0mchild (103) exited: 0
+Found proc to clean up after, pid -1
+[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e75000); 7740 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec54ec from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 3
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e93000); 7742 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df75a0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 1
+[0mchild (104) exited: 0
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1e65000 and 0xc1e55000 (4) into 0x01e10000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1e65000); 7758 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec563c from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 2
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e91000 and 0xc1e93000 (1) into 0x01e3c000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e91000 and 0xc1e8d000 (2) into 0x01e3c000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e8d000 and 0xc1e85000 (3) into 0x01e38000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e85000 and 0xc1e75000 (4) into 0x01e30000
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1e75000 and 0xc1e55000 (5) into 0x01e20000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1e91000); 7760 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1df73c0 from "proc" (0xc1efb284), slab 0xc1df8fe0, inuse 0
+[0mchild (105) exited: 0
+All tests completed
+
+Found proc to clean up after, pid -1
+[37;40mmm/page.c:283 __page_join(): joining 0xc1ea5000 and 0xc1e95000 (4) into 0x01e50000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 16 pages (addr 0xc1ea5000); 7776 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ec5054 from "kthread" (0xc1efb2ac), slab 0xc1ed4ff0, inuse 1
+[0m[37;40mmm/page.c:283 __page_join(): joining 0xc1edf000 and 0xc1edd000 (1) into 0x01e8a000
+[0m[31;40mmm/page.c:328 _page_free_order(): page_free: freed 2 pages (addr 0xc1edf000); 7778 pages currently free
+[0m[31;40mmm/slab.c:337 slab_obj_free(): Freed object 0xc1ee31e0 from "proc" (0xc1efb284), slab 0xc1ee4fe0, inuse 1
+[0m
+weenix: halted cleanly!

@@ -251,9 +251,12 @@ proc_kill_all()
         /* proc_kill() on curproc LAST */
 
         proc_t *p;
+
+        /*
         list_iterate_begin(&_proc_list, p, proc_t, p_list_link) {
-          /* dbg_print("Process alive before walking list: %d\n", p->p_pid); */
+          dbg_print("Process alive before walking list: %d\n", p->p_pid);
         } list_iterate_end();
+        */
 
         list_iterate_begin(&_proc_list, p, proc_t, p_list_link) {
           if (p != curproc && p->p_pid > PID_INIT) { /* Don't kill idle, init, or curproc */
@@ -262,9 +265,11 @@ proc_kill_all()
         } list_iterate_end();
         /* dbg_print("Cancel request sent to all other processes. Yay.\n"); */
 
+        /*
         list_iterate_begin(&_proc_list, p, proc_t, p_list_link) {
-          /* dbg_print("Process still alive: %d\n", p->p_pid); */
+          dbg_print("Process still alive: %d\n", p->p_pid);
         } list_iterate_end();
+        */
         /* dbg_print("curproc pid: %d\n", curproc->p_pid); */
 
         /* Once you've gotten rid of all of these, then you can kill curproc */

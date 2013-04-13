@@ -81,12 +81,16 @@ kmutex_lock_cancellable(kmutex_t *mtx)
 void
 kmutex_unlock(kmutex_t *mtx)
 {
-        mtx->km_holder = NULL;
+        if (curthr == mtx->km_holder) { /* Only unlock mutex if you own it */
+          mtx->km_holder = NULL;
 
-        if (sched_queue_empty(&mtx->km_waitq)) return;
+          if (sched_queue_empty(&mtx->km_waitq)) return;
 
-        /* Wake up someone who's waiting on the mutex */
-        kthread_t *thr = sched_wakeup_on(&mtx->km_waitq);
+          /* Wake up someone who's waiting on the mutex */
+          kthread_t *thr = sched_wakeup_on(&mtx->km_waitq);
+
+        }
+        else dbg_print("Oops! Current thread does not own mutex.\n");
 
         /* NOT_YET_IMPLEMENTED("PROCS: kmutex_unlock"); */
 }

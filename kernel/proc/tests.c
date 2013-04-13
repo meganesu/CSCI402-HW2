@@ -257,6 +257,21 @@ void *reparent_test(int arg1, void *arg2) {
     return NULL;
 }
 
+/*
+ * A thread function to test reparenting for multiple children per process.
+ * Start arg1 child processes running wakeme_test, which will wait on wakeme_q.
+ * When this thread function returns, all the child processes should be
+ * children of the init process.
+ */
+void *mult_reparent_test(int arg1, void *arg2) {
+    int i;
+    for (i = 0; i < arg1; i++) {
+        start_proc("reparented", wakeme_test, arg1);
+    }
+    do_exit(0);
+    return NULL;
+}
+
 /* The core testproc code */
 void *testproc(int arg1, void *arg2) {
     proc_thread_t pt;
@@ -421,10 +436,50 @@ void *testproc(int arg1, void *arg2) {
     wait_for_all();
     KASSERT(wake_me_len == 0 && "Error on wakeme bookkeeping");
 #endif
+
+#if CS402TESTS > 8
+/* Test reparenting multiple children */
+    dbg_print("multiple children reparent test");
+
+    /* Create a new process, which will then create a new process */
+    start_proc("multiple children reparent test", mult_reparent_test, 100);
+
+    /* Wait until all the "reparented" processes have been put on wake_me_q */
+    stop_until_queued(100, &wake_me_len);
+
+    /* By here, the mult_reparent_test process has already exited.
+     * All processes on queue should be children of init process.
+     */
+    sched_broadcast_on(&wake_me_q);
+    wait_for_all();
+
+    /* If test executed correctly, all the threads should be off queue,
+     * and wake_me_len will be 0.
+     */
+    KASSERT(wake_me_len == 0 && "Error on wakeme bookkeeping");
+    
+/* Case 1: Cancel parent process before child */
+
+/* Case 2: Kill all processes */
+#endif
+
+#if CS402TESTS > 9
+/* Create process stress test */
+/* Make sure there aren't any memory leaks */
+    dbg_print("stress test");
+    for (i = 0; i < 6000; i++) {
+	start_proc("many test", waitpid_test, i);
+        if (i%300 == 0) wait_for_all();
+    }
+    wait_for_all();
+#endif
+/*
 #if CS402TESTS > 8
     extern void *student_tests(int, void*);
     student_tests(arg1, arg2);
 #endif
+*/
+
     dbg_print("All tests completed\n\n");
     return NULL;
 }

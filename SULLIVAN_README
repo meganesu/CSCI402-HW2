@@ -1,0 +1,17 @@
+Megan Sullivan
+HW2 - Processes and Threads
+
+
+This code works for CS402TESTS = 10. (In Config.mk)
+
+
+Documentation for Custom Tests:
+
+Test 9. Multiple reparent test.
+
+This test creates a process which then creates several child processes which wait on the wake_me_q. The first process exits after creating all its children, at which point all the child processes should be reparented to the init process. The current reparenting stress test creates a chain of processes, but any given process only has at most two children. I wanted to check to make sure a process could handle reparenting a larger number of child processes.
+
+
+Test 10. Memory management stress test.
+
+This test creates and exits 300 processes at a time, for a total of 6000 processes created by the end of the test. If there were a memory leak when I created/destroyed processes and threads, there would eventually be no more space in memory to add new processes. However, this code can handle several processes at once, and consistently halts with one slab still allocated and 7746 pages free. Since these numbers remain constant even when the numbers in the for loop for the test are changed (i.e. more processes are run over the course of the test or more processes run at once), all the memory being allocated to processes and threads is also being deallocated, and there is no memory leak.

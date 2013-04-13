@@ -20,5 +20,7 @@
 #include "mm/mm.h"
 #include "mm/mman.h"
 
+/* Student tests are included in the tests.c file. */
 void *student_tests(int arg1, void *arg2) { return NULL; }
+
 
